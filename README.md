@@ -31,5 +31,5 @@ Once you do npm start than no need to save codes or restart npm or refresh brows
 ## Code formatting
 
 For code format we installed prettier package from https://prettier.io/ \
-You can type following command in vs code when you want to format or code;\
+You can type following command in vs code when you want to format your code;\
 npx prettier --write .
