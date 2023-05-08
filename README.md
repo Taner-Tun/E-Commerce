@@ -33,9 +33,9 @@ Once you do npm start than no need to save codes or restart npm or refresh brows
 Worked in main branch with two developers. Followed these steps;
 
 git add . \
-`git commit -m 'Add some feature'`
-git pull
-git push
+`git commit -m 'Add some feature'` \
+git pull \
+git push 
 
 
 ## Code formatting
