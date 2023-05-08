@@ -26,6 +26,8 @@ To install and run the project, follow these steps:
 3. Install dependencies: `npm install`
 4. Start the application: `npm start`
 
+Once you do npm start than no need to save codes or restart npm or refresh browser\
+
 ## Code formatting
 
 For code format we installed prettier package from https://prettier.io/ \
