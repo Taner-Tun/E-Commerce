@@ -28,6 +28,16 @@ To install and run the project, follow these steps:
 
 Once you do npm start than no need to save codes or restart npm or refresh browser\
 
+## Github Contribution
+
+Worked in main branch with two developers. Followed these steps;
+
+git add . \
+`git commit -m 'Add some feature'`
+git pull
+git push
+
+
 ## Code formatting
 
 For code format we installed prettier package from https://prettier.io/ \
