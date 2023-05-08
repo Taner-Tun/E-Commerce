@@ -1,5 +1,10 @@
 # jensen_deli
 
-test
-project created npm create vite@latest
-code format  npx prettier --write .
+## Description
+This project created npm create vite@latest
+
+## Code format
+For code format installed prettier package https://prettier.io/
+
+## for to run prettier
+ npx prettier --write .
