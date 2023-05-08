@@ -26,10 +26,8 @@ To install and run the project, follow these steps:
 3. Install dependencies: `npm install`
 4. Start the application: `npm start`
 
-created npm create vite@latest
-
-## Code format
+## Code formatting
 
 For code format we installed prettier package from https://prettier.io/
-Yo can type following command in vs code
+You can type following command in vs code;
 npx prettier --write .
