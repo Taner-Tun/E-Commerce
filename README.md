@@ -11,8 +11,8 @@ This project is designed to provide a customer for smooth online shopping experi
 Project build with vite. Vite is a build tool.
 that aims to provide a faster and leaner development experience for modern web projects.
 
-for to create project simply type in vs code
-$ npm create vite@latest or
+for to create project,  simply type in vs code\
+$ npm create vite@latest or \
 $ yarn create vite
 
 And follow the steps which is suitable for you.
@@ -28,6 +28,6 @@ To install and run the project, follow these steps:
 
 ## Code formatting
 
-For code format we installed prettier package from https://prettier.io/
-You can type following command in vs code when you want to format or code;
+For code format we installed prettier package from https://prettier.io/ \
+You can type following command in vs code when you want to format or code;\
 npx prettier --write .
