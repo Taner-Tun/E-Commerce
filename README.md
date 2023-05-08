@@ -29,5 +29,5 @@ To install and run the project, follow these steps:
 ## Code formatting
 
 For code format we installed prettier package from https://prettier.io/
-You can type following command in vs code;
+You can type following command in vs code when you want to format or code;
 npx prettier --write .
