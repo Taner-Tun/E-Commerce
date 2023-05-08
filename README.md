@@ -24,7 +24,7 @@ To install and run the project, follow these steps:
 1. Clone the repository: `git clone https://github.com/Taner-Tun/jensen_deli/tree/main`
 2. Navigate to the project directory: `cd project`
 3. Install dependencies: `npm install`
-4. Start the application: `npm start`
+4. Start the application: `npm run dev`
 
 Once you do npm start than no need to save codes or restart npm or refresh browser\
 
