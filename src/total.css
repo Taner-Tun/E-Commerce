@@ -74,4 +74,5 @@
 .visible {
   display: block;
   text-decoration: none;
+  width: 100px;
 }

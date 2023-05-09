@@ -16,7 +16,7 @@ function App() {
         const data = await response.json()
         console.log(data)
         setCart(data)
-        // getItems();
+        getItems();
       } catch (error) {
         console.log("Error occurred:", error)
       }
@@ -27,16 +27,20 @@ function App() {
   return (
     <>
       <div>
-        <h1>
+        <div className="test">
+        <h1 className="Cart">
           Shopping Cart <p>{cart.length}</p>
         </h1>
         <h4>Products</h4>
+        </div>
+     <div className="main">
         {/* <div className="itemList">{cart.map((item) => item.price)}</div> */}
         <div className="itemList">
           {cart.map((item) => (
             <Item key={item.id} itemid={item.id} image={item.image} title={item.title} category={item.category} price={item.price} />
           ))}
-        </div>
+          </div>
+       
         {/* {
         (cart.forEach((item) => (amount=amount+item.price)),
          (<Total totalprice={amount.toFixed(2)} /> ))
@@ -50,8 +54,16 @@ function App() {
           return <Total totalprice={amount.toFixed(2)} />
         })()}
       </div>
+      </div>
     </>
   )
-}
+  function getItems() {
+    const cartItems = document.querySelectorAll(".CartItem");
+    cartItems.forEach((item) => {
+      const deleteButton = item.querySelector(".delete");
+      deleteButton.classList.add("visible");
+    });
+  }
 
+ }
 export default App
