@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react"
 import "./App.css"
 import Item from "./item"
 import Total from "./Total"
+import { doc } from "prettier"
 
 function App() {
   const [cart, setCart] = useState([])
@@ -57,13 +58,137 @@ function App() {
       </div>
     </>
   )
+  // function getItems() {
+  //   const cartItems = document.querySelectorAll(".CartItem");
+  //   cartItems.forEach((item) => {
+  //     const deleteButton = item.querySelector(".delete");
+  //     deleteButton.classList.add("visible");
+  //     item.addEventListener("click",(e) =>{
+  //       switch(e.target.textContent){
+  //         case "+":
+  //         {
+  //           const countElement = item.querySelector(".amount");
+  //   let count = parseInt(countElement.textContent);
+  //   const productPrice = item.querySelector(".details h2").textContent;
+  //   count++;
+  //   countElement.textContent = count.toString();
+  //           if (count > 1) {
+  //               item.querySelector(".delete").classList.remove
+  //               ("visible");
+  //           }
+  //           item.querySelector(".amount").textContent = count;
+  //           item.querySelector(".details h5").textContent =
+  //           (productPrice*count).toFixed(2)+ "kr.";
+  //           const tPrice=Math.max(document.querySelector(".checkout h4").textContent);
+  //           const cargoFreePrice=tPrice+productPrice*count;
+  //           if (cargoFreePrice > 500) {
+  //             document.querySelector(".freeshipping").classList.add("visible");
+  //             document.querySelector(".cargoamountkr").classList.add("cargopricedelete")
+  //           }else {
+  //             document.querySelector(".freeshipping").classList.remove("visible");
+  //             document.querySelector(".cargoamountkr").classList.remove("cargopricedelete")
+  //           }
+  //           document.querySelector("checkout h4").
+  //           textContent = Math.round(tPrice+productPrice*1).toFixed(2);
+  //           document.querySelector(".orderamount").
+  //           textContent=document.querySelector(".checkout h4").
+  //           textContent+ "kr";
+  //           break;
   function getItems() {
     const cartItems = document.querySelectorAll(".CartItem");
     cartItems.forEach((item) => {
       const deleteButton = item.querySelector(".delete");
       deleteButton.classList.add("visible");
-    });
+      item.addEventListener("click", (e) => {
+        switch (e.target.textContent) {
+          case "+": {
+            const countElement = item.querySelector(".amount");
+            let count = parseInt(countElement.textContent);
+            const productPrice = parseFloat(item.querySelector(".details h2").textContent);
+            count++;
+            countElement.textContent = count.toString();
+            if (count > 1) {
+              item.querySelector(".delete").classList.remove("visible");
+            }
+            item.querySelector(".amount").textContent = count.toString();
+            item.querySelector(".details h5").textContent = (productPrice * count).toFixed(2) + "kr.";
+  
+            const tPrice = parseFloat(document.querySelector(".checkout h4").textContent);
+            const cargoFreePrice = tPrice + productPrice * count;
+            if (cargoFreePrice > 500) {
+              document.querySelector(".freeshipping").classList.add("visible");
+              document.querySelector(".cargoamountkr").classList.add("cargopricedelete");
+            } else {
+              document.querySelector(".freeshipping").classList.remove("visible");
+              document.querySelector(".cargoamountkr").classList.remove("cargopricedelete");
+            }
+  
+            document.querySelector(".checkout h4").textContent = (tPrice + productPrice * 1).toFixed(2);
+            document.querySelector(".orderamount").textContent = document.querySelector(".checkout h4").textContent + "kr";
+            break;
+          }
+          // case "-":
+          //   {
+          //     const count = item.querySelector(".amount").textContent;
+          //     if (count !=1){
+          //     const productPrice=item.querySelector(".details h2").
+          //     textContent;
+          //     count--;
+          //     if (count > 1) {
+          //         item.querySelector(".delete").classList.remove
+          //         ("visible");
+          //     }
+          //     item.querySelector(".amount").textContent = count;
+          //     item.querySelector(".details h5").textContent =
+          //     (productPrice*count).toFixed(2)+ "kr.";
+          //     const tPrice=Math.max(document.querySelector(".checkout h4").textContent);
+          //     const cargoFreePrice=tPrice+productPrice*count;
+          //     if (cargoFreePrice < 500) {
+          //       document.querySelector(".freeshipping").classList.add("visible");
+          //       document.querySelector(".cargoamountkr").classList.add("cargopricedelete")
+          //     }else {
+          //       document.querySelector(".freeshipping").classList.remove("visible");
+          //       document.querySelector(".cargoamountkr").classList.remove("cargopricedelete")
+          //     }
+          //     document.querySelector("checkout h4")
+          //     textContent = Math.round(tPrice+productPrice*1).toFixed(2);
+          //     document.querySelector(".orderamount").
+          //     textContent=document.querySelector(".checkout h4").
+          //     textContent+ "kr";
+          //     break;
+          case "-": {
+            const countElement = item.querySelector(".amount");
+            let count = parseInt(countElement.textContent);
+            if (count !== 1) {
+              const productPrice = parseFloat(item.querySelector(".details h2").textContent);
+              count--;
+              if (count > 1) {
+                item.querySelector(".delete").classList.remove("visible");
+              }
+              countElement.textContent = count.toString();
+              item.querySelector(".details h5").textContent = (productPrice * count).toFixed(2) + "kr.";
+          
+              const tPrice = parseFloat(document.querySelector(".checkout h4").textContent);
+              const cargoFreePrice = tPrice - productPrice * count;
+              if (cargoFreePrice < 500) {
+                document.querySelector(".freeshipping").classList.add("visible");
+                document.querySelector(".cargoamountkr").classList.add("cargopricedelete");
+              } else {
+                document.querySelector(".freeshipping").classList.remove("visible");
+                document.querySelector(".cargoamountkr").classList.remove("cargopricedelete");
+              }
+          
+              document.querySelector(".checkout h4").textContent = (tPrice - productPrice * 1).toFixed(2);
+              document.querySelector(".orderamount").textContent = document.querySelector(".checkout h4").textContent + "kr";
+            }
+            break;
+              
+            }
+          }
+        });
+      })
+    
   }
-
- }
-export default App
+}
+ 
+export default App;
