@@ -11,7 +11,7 @@ This project is designed to provide a customer for smooth online shopping experi
 Project build with vite. Vite is a build tool.
 that aims to provide a faster and leaner development experience for modern web projects.
 
-for to create project,  simply type in vs code\
+for to create project, simply type in vs code\
 $ npm create vite@latest or \
 $ yarn create vite
 
@@ -35,8 +35,7 @@ Worked in main branch with two developers. Followed these steps;
 git add . \
 `git commit -m 'Add some feature'` \
 git pull \
-git push 
-
+git push
 
 ## Code formatting
 

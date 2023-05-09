@@ -1,0 +1,97 @@
+.CartItem {
+  display: flex;
+  width: 98%;
+  min-height: 20vh;
+  margin-top: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.CartItem img {
+  width: 200px;
+  height: 180px;
+  object-fit: contain;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 0.2rem;
+  margin-bottom: 10px;
+}
+.quantity {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 3;
+  margin-left: 20px;
+}
+
+.details h5 {
+  display: flex;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: orangered;
+  align-items: center;
+}
+
+.details h2 {
+  visibility: hidden;
+}
+
+.details p {
+  margin-left: 5px;
+}
+
+.quantity button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  padding: 0.2rem;
+  border-radius: 50%;
+  background: none;
+  border: 1px solid orangered;
+  color: orangered;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.quantity button:hover {
+  background: orangered;
+  color: white;
+}
+
+.amount {
+  color: orangered;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.delete {
+  position: absolute;
+  display: none;
+  top: 65%;
+  left: 0%;
+  background: red;
+  color: white;
+  height: 30px;
+  width: 50px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.delete:hover {
+  background: rgb(228, 95, 95);
+}
+
+.visible {
+  display: block;
+}
