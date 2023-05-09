@@ -111,9 +111,9 @@ function App() {
               item.querySelector(".delete").classList.remove("visible");
             }
             item.querySelector(".amount").textContent = count.toString();
-            item.querySelector(".details h5").textContent = (productPrice * count).toFixed(2) + "kr.";
+            item.querySelector(".details h5").textContent = (productPrice * count).toFixed(2) + " kr";
   
-            const tPrice = parseFloat(document.querySelector(".checkout h4").textContent);
+            const tPrice = parseFloat(document.querySelector(".checkout h4").textContent); 
             const cargoFreePrice = tPrice + productPrice * count;
             if (cargoFreePrice > 500) {
               document.querySelector(".freeshipping").classList.add("visible");
@@ -124,7 +124,7 @@ function App() {
             }
   
             document.querySelector(".checkout h4").textContent = (tPrice + productPrice * 1).toFixed(2);
-            document.querySelector(".orderamount").textContent = document.querySelector(".checkout h4").textContent + "kr";
+            document.querySelector(".orderamount").textContent = document.querySelector(".checkout h4").textContent + " kr";
             break;
           }
           // case "-":
@@ -162,11 +162,11 @@ function App() {
             if (count !== 1) {
               const productPrice = parseFloat(item.querySelector(".details h2").textContent);
               count--;
-              if (count > 1) {
+              if (count < 2) {
                 item.querySelector(".delete").classList.remove("visible");
               }
               countElement.textContent = count.toString();
-              item.querySelector(".details h5").textContent = (productPrice * count).toFixed(2) + "kr.";
+              item.querySelector(".details h5").textContent = (productPrice * count).toFixed(2) + " kr";
           
               const tPrice = parseFloat(document.querySelector(".checkout h4").textContent);
               const cargoFreePrice = tPrice - productPrice * count;
@@ -179,11 +179,39 @@ function App() {
               }
           
               document.querySelector(".checkout h4").textContent = (tPrice - productPrice * 1).toFixed(2);
-              document.querySelector(".orderamount").textContent = document.querySelector(".checkout h4").textContent + "kr";
+              document.querySelector(".orderamount").textContent = document.querySelector(".checkout h4").textContent + " kr";
             }
             break;
-              
             }
+            // case "delete":
+            //   {
+            //     const productPrice = item.querySelector(".details h2").textContent;
+            //     const tPrice = Math.max(document.querySelector(".checkout h4").textContent);
+            //     document.querySelector(".checkout h4").textContent = Math.max(tPrice-productPrice*1).toFixed(2);
+            //     document.querySelector(".orderamount").textContent + " kr" ;
+            //     cartItems.item(index).getElementsByClassName.animation="removeanimaton 0.5 ease";
+            //     cartItems.item(index).addEventListener("animationed",() => {
+            //       cartItems.item(index).remove();
+            //       document.querySelector(".mycart p").textContent = itemCount
+            //     });
+            //      break;
+            //   }
+            case "delete": {
+              const productPrice = parseFloat(item.querySelector(".details h2").textContent);
+              const tPrice = parseFloat(document.querySelector(".checkout h4").textContent);
+              document.querySelector(".checkout h4").textContent = (tPrice - productPrice * 1).toFixed(2);
+              document.querySelector(".orderamount").textContent += " kr";
+            
+              const cartItem = cartItems[index];
+              cartItem.style.animation = "removeanimation 0.5s ease";
+            
+              cartItem.addEventListener("animationend", () => {
+                cartItem.remove();
+                document.querySelector(".mycart p").textContent = itemCount.toString();
+              });
+              break;
+            }
+            
           }
         });
       })
