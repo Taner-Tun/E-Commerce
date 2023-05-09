@@ -20,7 +20,7 @@ To install and run the project, do the following steps:
 Clone the repository: git clone https://github.com/Taner-Tun/jensen_deli/tree/main 
 Navigate to the project directory: cd project\
 Install dependencies: npm install\
-Start the application: npm run dev\
+Start the application: npm run dev
 
 Once you've gotten the project running with npm run dev there is no need to restart the npm or refresh\
 the browser when changes to the project have been made.
@@ -36,7 +36,7 @@ git push
 
 ## Code formatting
 For code format we installed prettier package from https://prettier.io/
-You can type following command in vs code when you want to format your code;\
+You can type following command in vs code when you want to format your code;
 
 npx prettier --write . 
 
