@@ -12,7 +12,7 @@ function Total({totalprice}) {
         </div>
         <button>Complete Order</button>
         <p className="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Om du beställer mer än 4000 kr fraktfritt 
         </p>
         <div className="cargo">
           <div className="cargoamount">
