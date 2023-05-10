@@ -18,7 +18,7 @@ function Total({totalprice}) {
           <div className="cargoamount">
             <p>Cargo</p>
             <p className="freeshipping">Free Deliver</p>
-            <p className="cargoamountkr">10 kr</p>
+            <p className="cargoamountkr">5000 kr</p>
             </div>
             <div className="ordertotal">
                 

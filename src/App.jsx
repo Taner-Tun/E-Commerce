@@ -115,7 +115,7 @@ function App() {
   
             const tPrice = parseFloat(document.querySelector(".checkout h4").textContent); 
             const cargoFreePrice = tPrice + productPrice * count;
-            if (cargoFreePrice > 500) {
+            if (cargoFreePrice > 5000) {
               document.querySelector(".freeshipping").classList.add("visible");
               document.querySelector(".cargoamountkr").classList.add("cargopricedelete");
             } else {
@@ -163,7 +163,7 @@ function App() {
               const productPrice = parseFloat(item.querySelector(".details h2").textContent);
               count--;
               if (count < 2) {
-                item.querySelector(".delete").classList.remove("visible");
+                item.querySelector(".delete").classList.add("visible");
               }
               countElement.textContent = count.toString();
               item.querySelector(".details h5").textContent = (productPrice * count).toFixed(2) + " kr";
@@ -183,19 +183,7 @@ function App() {
             }
             break;
             }
-            // case "delete":
-            //   {
-            //     const productPrice = item.querySelector(".details h2").textContent;
-            //     const tPrice = Math.max(document.querySelector(".checkout h4").textContent);
-            //     document.querySelector(".checkout h4").textContent = Math.max(tPrice-productPrice*1).toFixed(2);
-            //     document.querySelector(".orderamount").textContent + " kr" ;
-            //     cartItems.item(index).getElementsByClassName.animation="removeanimaton 0.5 ease";
-            //     cartItems.item(index).addEventListener("animationed",() => {
-            //       cartItems.item(index).remove();
-            //       document.querySelector(".mycart p").textContent = itemCount
-            //     });
-            //      break;
-            //   }
+          
             case "delete": {
               const productPrice = parseFloat(item.querySelector(".details h2").textContent);
               const tPrice = parseFloat(document.querySelector(".checkout h4").textContent);
