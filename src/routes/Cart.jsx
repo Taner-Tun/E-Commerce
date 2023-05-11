@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react"
 import Item from "../Item"
 import Total from "../Total"
-import NavComponent from "./navComponent"
 import "../App.css"
 
 function Cart() {
@@ -70,7 +69,6 @@ function Cart() {
 
   return (
     <div>
-      <NavComponent />
       <div className="test">
         <h1 className="Cart">
           Shopping Cart <p>{cart.length}</p>
