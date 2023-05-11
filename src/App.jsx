@@ -35,17 +35,11 @@ function App() {
         <h4>Products</h4>
         </div>
      <div className="main">
-        {/* <div className="itemList">{cart.map((item) => item.price)}</div> */}
         <div className="itemList">
           {cart.map((item) => (
             <Item key={item.id} itemid={item.id} image={item.image} title={item.title} category={item.category} price={item.price} />
           ))}
           </div>
-       
-        {/* {
-        (cart.forEach((item) => (amount=amount+item.price)),
-         (<Total totalprice={amount.toFixed(2)} /> ))
-        } */}
 
         {(() => {
           let amount = 0
@@ -58,47 +52,11 @@ function App() {
       </div>
     </>
   )
-  // function getItems() {
-  //   const cartItems = document.querySelectorAll(".CartItem");
-  //   cartItems.forEach((item) => {
-  //     const deleteButton = item.querySelector(".delete");
-  //     deleteButton.classList.add("visible");
-  //     item.addEventListener("click",(e) =>{
-  //       switch(e.target.textContent){
-  //         case "+":
-  //         {
-  //           const countElement = item.querySelector(".amount");
-  //   let count = parseInt(countElement.textContent);
-  //   const productPrice = item.querySelector(".details h2").textContent;
-  //   count++;
-  //   countElement.textContent = count.toString();
-  //           if (count > 1) {
-  //               item.querySelector(".delete").classList.remove
-  //               ("visible");
-  //           }
-  //           item.querySelector(".amount").textContent = count;
-  //           item.querySelector(".details h5").textContent =
-  //           (productPrice*count).toFixed(2)+ "kr.";
-  //           const tPrice=Math.max(document.querySelector(".checkout h4").textContent);
-  //           const cargoFreePrice=tPrice+productPrice*count;
-  //           if (cargoFreePrice > 500) {
-  //             document.querySelector(".freeshipping").classList.add("visible");
-  //             document.querySelector(".cargoamountkr").classList.add("cargopricedelete")
-  //           }else {
-  //             document.querySelector(".freeshipping").classList.remove("visible");
-  //             document.querySelector(".cargoamountkr").classList.remove("cargopricedelete")
-  //           }
-  //           document.querySelector("checkout h4").
-  //           textContent = Math.round(tPrice+productPrice*1).toFixed(2);
-  //           document.querySelector(".orderamount").
-  //           textContent=document.querySelector(".checkout h4").
-  //           textContent+ "kr";
-  //           break;
   function getItems() {
     const cartItems = document.querySelectorAll(".CartItem");
     cartItems.forEach((item) => {
-      const deleteButton = item.querySelector(".delete");
-      deleteButton.classList.add("visible");
+      // const deleteButton = item.querySelector(".delete");
+      //  deleteButton.classList.add("visible");
       item.addEventListener("click", (e) => {
         switch (e.target.textContent) {
           case "+": {
@@ -107,9 +65,9 @@ function App() {
             const productPrice = parseFloat(item.querySelector(".details h2").textContent);
             count++;
             countElement.textContent = count.toString();
-            if (count > 1) {
-              item.querySelector(".delete").classList.remove("visible");
-            }
+            // if (count > 1) {
+            //   item.querySelector(".delete").classList.remove("visible");
+            // }
             item.querySelector(".amount").textContent = count.toString();
             item.querySelector(".details h5").textContent = (productPrice * count).toFixed(2) + " kr";
   
@@ -127,35 +85,6 @@ function App() {
             document.querySelector(".orderamount").textContent = document.querySelector(".checkout h4").textContent + " kr";
             break;
           }
-          // case "-":
-          //   {
-          //     const count = item.querySelector(".amount").textContent;
-          //     if (count !=1){
-          //     const productPrice=item.querySelector(".details h2").
-          //     textContent;
-          //     count--;
-          //     if (count > 1) {
-          //         item.querySelector(".delete").classList.remove
-          //         ("visible");
-          //     }
-          //     item.querySelector(".amount").textContent = count;
-          //     item.querySelector(".details h5").textContent =
-          //     (productPrice*count).toFixed(2)+ "kr.";
-          //     const tPrice=Math.max(document.querySelector(".checkout h4").textContent);
-          //     const cargoFreePrice=tPrice+productPrice*count;
-          //     if (cargoFreePrice < 500) {
-          //       document.querySelector(".freeshipping").classList.add("visible");
-          //       document.querySelector(".cargoamountkr").classList.add("cargopricedelete")
-          //     }else {
-          //       document.querySelector(".freeshipping").classList.remove("visible");
-          //       document.querySelector(".cargoamountkr").classList.remove("cargopricedelete")
-          //     }
-          //     document.querySelector("checkout h4")
-          //     textContent = Math.round(tPrice+productPrice*1).toFixed(2);
-          //     document.querySelector(".orderamount").
-          //     textContent=document.querySelector(".checkout h4").
-          //     textContent+ "kr";
-          //     break;
           case "-": {
             const countElement = item.querySelector(".amount");
             let count = parseInt(countElement.textContent);
@@ -185,9 +114,14 @@ function App() {
             }
           
             case "delete": {
+ 
+
+              const item = cartItems[index];
               const productPrice = parseFloat(item.querySelector(".details h2").textContent);
-              const tPrice = parseFloat(document.querySelector(".checkout h4").textContent);
-              document.querySelector(".checkout h4").textContent = (tPrice - productPrice * 1).toFixed(2);
+              const totalPriceElement = document.querySelector(".checkout h4");
+              const tPrice = parseFloat(totalPriceElement.textContent);
+              
+              totalPriceElement.textContent = (tPrice - productPrice).toFixed(2);
               document.querySelector(".orderamount").textContent += " kr";
             
               const cartItem = cartItems[index];
@@ -207,4 +141,8 @@ function App() {
   }
 }
  
-export default App;
+export default App;        
+
+                       
+              
+     

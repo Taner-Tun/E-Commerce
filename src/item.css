@@ -75,13 +75,13 @@
 
 .delete {
   position: absolute;
-  display: none;
+  display: block;
   top: 65%;
   left: 0%;
   background: red;
   color: white;
   height: 50px;
-  width: 50px;
+  width: 100px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
