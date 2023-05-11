@@ -36,12 +36,12 @@
   flex-direction: column;
 }
 @keyframes removeanimation {
- from{
-  opacity: 1;
-  transform: translateX(0%);
- }
- to {
-  opacity: 0;
-  transform: translateX(-100px);
- }
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
 }

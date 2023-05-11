@@ -1,12 +1,9 @@
-import React from "react";
+import React from "react"
 
-
-import Cart from "./assets/Routes/Cart";
-import { doc } from "prettier";
+import Cart from "./assets/Routes/Cart"
+import {doc} from "prettier"
 
 function App() {
-  
-
   return (
     <>
       <div>
@@ -14,11 +11,6 @@ function App() {
       </div>
     </>
   )
- 
 }
- 
-export default App;        
 
-                       
-              
-     
+export default App
