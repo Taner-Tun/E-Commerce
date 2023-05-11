@@ -1,28 +1,37 @@
-import React from "react"
-import "./item.css"
+import React from "react";
+import "./item.css";
 
-function Item({itemid, image, title, category, price}) {
-  // const p = 0;
-  // p = price;
+function Item({ itemid, image, title, category, price, count, handleItemClick }) {
+  const totalPrice = (price * count).toFixed(2);
+
   return (
     <div className="CartItem" id={itemid}>
-      <img src={image} />
+      <img src={image} alt={title} />
       <div className="details">
         <h4>{title}</h4>
         <h6>{category}</h6>
         <h5>
-          {price} <p>kr</p>
+          {totalPrice} <p>kr</p>
         </h5>
         <h2>{price}</h2>
-        <button className="delete">Radera</button>
+        <button className="delete" onClick={() => handleItemClick("delete")}>
+          Radera
+        </button>
       </div>
       <div className="quantity">
-        <button className="plus">+</button>
-        <p className="amount">1</p>
-        <button className="minus">-</button>
+        <button className="plus" onClick={() => handleItemClick("+")}>
+          +
+        </button>
+        <p className="amount">{count}</p>
+        <button className="minus" onClick={() => handleItemClick("-")}>
+          -
+        </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default Item
+export default Item;
+
+
+
