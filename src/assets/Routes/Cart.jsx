@@ -63,7 +63,7 @@ function Cart() {
     if (totalNum >= 5000) {
       return totalNum.toFixed(2);
     } else {
-      return (totalNum + 100).toFixed(2);
+      return (totalNum + 0).toFixed(2);
     }
   };
 
