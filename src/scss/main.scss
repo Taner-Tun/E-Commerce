@@ -1,2 +1,5 @@
-@import "index";
-@import "root";
+@use "index";
+@use "card";
+@use "cart";
+@use "item";
+@use "root";

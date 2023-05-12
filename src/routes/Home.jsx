@@ -1,6 +1,5 @@
-import NavComponent from "./navComponent"
-import Card_Items from "./Card_Items"
-import FakeData from "./FakeData"
+import Card_Items from "../components/Card_Items"
+import FakeData from "../components/FakeData"
 
 function createData(FakeData) {
   return <Card_Items key={FakeData.id} title={FakeData.title} description={FakeData.description} />
@@ -10,7 +9,6 @@ function Home() {
     <>
       <h1>Main Page</h1>
       {FakeData.map(createData)}
-      <NavComponent />
     </>
   )
 }

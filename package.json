@@ -4,15 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm i && vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "node ./app.js",
-    "watch": "node-sass -o src/css src/scss -w"
+    "start": "vite"
   },
   "dependencies": {
-    "gulp-cli": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1"
@@ -25,11 +23,9 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^5.1.0",
-    "node-sass": "^8.0.0",
     "nodemon": "^2.0.22",
     "prettier": "2.8.8",
+    "sass": "^1.62.1",
     "vite": "^4.3.2"
   }
 }

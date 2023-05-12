@@ -1,8 +1,8 @@
-import React from "react";
-import "./item.css";
+import React from "react"
+import "../scss/main.scss"
 
-function Item({ itemid, image, title, category, price, count, handleItemClick }) {
-  const totalPrice = (price * count).toFixed(2);
+function Item({itemid, image, title, category, price, count, handleItemClick}) {
+  const totalPrice = (price * count).toFixed(2)
 
   return (
     <div className="CartItem" id={itemid}>
@@ -28,10 +28,7 @@ function Item({ itemid, image, title, category, price, count, handleItemClick })
         </button>
       </div>
     </div>
-  );
+  )
 }
 
-export default Item;
-
-
-
+export default Item

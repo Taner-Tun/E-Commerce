@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
-import Item from "../Item"
-import Total from "../Total"
-import "../App.css"
+import Item from "../components/Item"
+import Total from "../components/Total"
+import "../scss/main.scss"
 
 function Cart() {
   const [cart, setCart] = useState([])
