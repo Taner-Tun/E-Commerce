@@ -14,7 +14,7 @@ function Cart() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://fakestoreapi.com/products?limit=15")
+      const response = await fetch("https://fakestoreapi.com/products?limit=5")
       const data = await response.json()
       console.log(data)
       setCart(data.map((item) => ({...item, count: 1})))
