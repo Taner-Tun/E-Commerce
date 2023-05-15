@@ -1,14 +1,29 @@
+@use "./colors" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Prata&display=swap");
+
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: Prata, Open-Sans;
+  font-size: 2em;
+  line-height: 1.8;
+  font-weight: 400;
+  color: $color-dark;
 }
 
-// a {
-//   font-weight: 500;
-//   color: $color-dark;
-//   text-decoration: inherit;
+h2 {
+  font-family: Lato, Open-Sans;
+  font-size: 1.5em;
+  line-height: 0.8;
+  font-weight: 600;
+  color: $color-dark;
+}
 
-//   &:hover {
-//     color: $color-secondary;
-//   }
-// }
+a {
+  font-weight: 500;
+  color: $color-dark;
+  text-decoration: inherit;
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
