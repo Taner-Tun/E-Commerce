@@ -4,6 +4,7 @@ import FakeData from "../components/FakeData"
 function createData(FakeData) {
   return <Card_Items key={FakeData.id} title={FakeData.title} description={FakeData.description} />
 }
+
 function Home() {
   return (
     <>
