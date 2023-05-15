@@ -6,9 +6,7 @@ import RootLayout from "./routes/Root"
 import Home from "./routes/Home"
 import Contact from "./routes/Contact"
 import Cart from "./routes/Cart"
-import Cheese from "./routes/Cheese"
-import Meat from "./routes/Meat"
-import Wine from "./routes/Wine"
+import Products from "./routes/Products"
 import ErrorPage from "./routes/Error"
 
 const routeDefinitions = createRoutesFromElements(
@@ -19,9 +17,7 @@ const routeDefinitions = createRoutesFromElements(
       <Route path="/" element={<Home />}></Route>
       <Route path="/contact" element={<Contact />}></Route>
       <Route path="/cart" element={<Cart />}></Route>
-      <Route path="/cheese" element={<Cheese />}></Route>
-      <Route path="/meat" element={<Meat />}></Route>
-      <Route path="/wine" element={<Wine />}></Route>
+      <Route path="/products" element={<Products />}></Route>
     </Route>
   </Route>
 )
@@ -29,7 +25,12 @@ const routeDefinitions = createRoutesFromElements(
 const router = createBrowserRouter(routeDefinitions)
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <>
+      <div className="test">Test</div>
+      <RouterProvider router={router} />
+    </>
+  )
 }
 
 export default App

@@ -1,0 +1,44 @@
+@use "colors" as *;
+
+$core-breakpoints: (
+  sm: 1px,
+  md: 640px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1440px,
+);
+
+@function get($map, $value) {
+  $r: map-get($map, $value);
+
+  @if $r != null {
+    @return $r;
+  }
+
+  @debug "Error when using function get()";
+  @debug "Could not find value in map.";
+  @debug "$VALUE:" + $value;
+  @debug "----";
+  @debug "$MAP";
+  @debug "----";
+  @debug $map;
+  @debug "----";
+  @debug "----";
+  @debug "----";
+
+  @error $value + " is not available in $map.";
+}
+
+@mixin im-basic-breakpoint($value) {
+  $str: "min-width: " + get($core-breakpoints, $value);
+  @media only screen and (#{$str}) {
+    @content;
+  }
+}
+
+.test {
+  @include im-basic-breakpoint("lg") {
+    padding-left: 30px;
+    background-color: $color-primary;
+  }
+}
