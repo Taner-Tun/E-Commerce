@@ -1,71 +1,71 @@
-import React, {useState, useEffect} from "react"
-import Item from "../components/Item"
-import Total from "../components/Total"
-import "../scss/main.scss"
+import React, { useState, useEffect } from "react";
+import Item from "../components/Item";
+import Total from "../components/Total";
+import "../scss/main.scss";
 
 function Cart() {
-  const [cart, setCart] = useState([])
-  const [amount, setAmount] = useState(0)
-  const [itemCount, setItemCount] = useState(0)
+  const [cart, setCart] = useState([]);
+  const [amount, setAmount] = useState(0);
+  const [itemCount, setItemCount] = useState(0);
 
   useEffect(() => {
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://fakestoreapi.com/products?limit=5")
-      const data = await response.json()
-      console.log(data)
-      setCart(data.map((item) => ({...item, count: 1})))
+      const response = await fetch("http://localhost:4000/data");
+      const data = await response.json();
+      console.log(data);
+      setCart(data.map((item) => ({ ...item, count: 1 })));
     } catch (error) {
-      console.log("Error occurred:", error)
+      console.log("Error occurred:", error);
     }
-  }
+  };
 
   const handleItemClick = (index, action) => {
-    const updatedCart = [...cart]
-    const item = updatedCart[index]
+    const updatedCart = [...cart];
+    const item = updatedCart[index];
     switch (action) {
       case "+": {
-        item.count += 1
-        break
+        item.count += 1;
+        break;
       }
       case "-": {
         if (item.count > 1) {
-          item.count -= 1
+          item.count -= 1;
         }
-        break
+        break;
       }
       case "delete": {
-        updatedCart.splice(index, 1)
-        break
+        updatedCart.splice(index, 1);
+        break;
       }
       default:
-        break
+        break;
     }
-    setCart(updatedCart)
-  }
+    setCart(updatedCart);
+  };
 
   useEffect(() => {
-    let totalPrice = 0
-    let itemCount = 0
+    let totalPrice = 0;
+    let itemCount = 0;
     cart.forEach((item) => {
-      totalPrice += item.price * item.count
-      itemCount += item.count
-    })
-    setAmount(totalPrice.toFixed(2))
-    setItemCount(itemCount)
-  }, [cart])
+      totalPrice += item.price * item.count;
+      itemCount += item.count;
+    });
+    setAmount(totalPrice.toFixed(2));
+    setItemCount(itemCount);
+  }, [cart]);
 
   const calculateTotalWithShipping = (totalPrice) => {
-    const totalNum = Number(totalPrice)
+    const totalNum = Number(totalPrice);
     if (totalNum >= 5000) {
-      return totalNum.toFixed(2)
+      return totalNum.toFixed(2);
     } else {
-      return (totalNum + 0).toFixed(2)
+      return (totalNum + 0).toFixed(2);
     }
-  }
+  };
 
   return (
     <div>
@@ -93,7 +93,8 @@ function Cart() {
         <Total totalprice={calculateTotalWithShipping(amount)} itemCount={itemCount} />
       </div>
     </div>
-  )
+  );
 }
 
-export default Cart
+export default Cart;
+
