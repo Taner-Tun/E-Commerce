@@ -2,6 +2,8 @@ import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} fr
 
 import {doc} from "prettier"
 
+import Header from "./components/Header"
+
 import RootLayout from "./routes/Root"
 import Home from "./routes/Home"
 import Contact from "./routes/Contact"
@@ -27,7 +29,7 @@ const router = createBrowserRouter(routeDefinitions)
 function App() {
   return (
     <>
-      <div className="test">Test</div>
+      {/* <Header /> */}
       <RouterProvider router={router} />
     </>
   )
