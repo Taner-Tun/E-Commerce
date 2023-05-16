@@ -45,14 +45,14 @@ app.get('/data', (req, res) => {
 
 // GET route to retrieve data by ID
 app.get('/data/:id', (req, res) => {
-  const id = req.params.id;
+  const itemid = req.params.id;
 
   pool.getConnection((err, connection) => {
     if (err) {
       console.error('Error connecting to MySQL database:', err);
       res.status(500).json({ error: 'Internal server error' });
     } else {
-      connection.query('SELECT * FROM jensen_deli WHERE id = ?', [id], (error, results) => {
+      connection.query('SELECT * FROM jensen_deli WHERE itemid = ?', [itemid], (error, results) => {
         connection.release();
         if (error) {
           console.error('Error executing MySQL query:', error);
@@ -95,37 +95,13 @@ app.post('/data', (req, res) => {
 });
 
 // PUT route to update data by ID
-// app.put('/data/:id', (req, res) => {
-//   const id = req.params.id;
-//   const { itemid, image, title, category, price } = req.body;
-//   const data = { itemid, image, title, category, price };
-
-//   pool.getConnection((err, connection) => {
-//     if (err) {
-//       console.error('Error connecting to MySQL database:', err);
-//       res.status(500).json({ error: 'Internal server error' });
-//     } else {
-//       connection.query('UPDATE jensen_deli SET ? WHERE id = ?', [data, id], (error, results) => {
-//         connection.release();
-//         if (error) {
-//           console.error('Error executing MySQL query:', error);
-//           res.status(500).json({ error: 'Internal server error' });
-//         } else if (results.affectedRows === 0) {
-//           res.status(404).json({ error: 'Data not found' });
-//         } else {
-//           res.status(200).json({ message: 'Data updated successfully' });
-//         }
-//       });
-//     }
-//   });
-// });
 app.put('/data/:id', (req, res) => {
-  const id = req.params.id;
-  const { itemid, image, title, category, price } = req.body;
+  const itemid = req.params.id;
+  const { image, title, category, price } = req.body;
 
   // Perform the update query
-  const sql = `UPDATE jensen_deli SET itemid = ?, image = ?, title = ?, category = ?, price = ? WHERE id = ?`;
-  const values = [itemid, image, title, category, price, id];
+  const sql = `UPDATE jensen_deli SET itemid = ?, image = ?, title = ?, category = ?, price = ? WHERE itemid = ?`;
+  const values = [itemid, image, title, category, price];
 
   db.query(sql, values, (err, result) => {
     if (err) {
@@ -141,14 +117,14 @@ app.put('/data/:id', (req, res) => {
 
 // DELETE route to delete data by ID
 app.delete('/data/:id', (req, res) => {
-  const id = req.params.id;
+  const itemid = req.params.id;
 
   pool.getConnection((err, connection) => {
     if (err) {
       console.error('Error connecting to MySQL database:', err);
       res.status(500).json({ error: 'Internal server error' });
     } else {
-      connection.query('DELETE FROM jensen_deli WHERE id = ?', [id], (error, results) => {
+      connection.query('DELETE FROM jensen_deli WHERE itemid = ?', [itemid], (error, results) => {
         connection.release();
         if (error) {
           console.error('Error executing MySQL query:', error);
