@@ -5,7 +5,9 @@ function createData(FakeData) {
   return <Card_Items 
   key={FakeData.id} 
   title={FakeData.title} 
-  description={FakeData.description} />
+  image={FakeData.image}  
+  category={FakeData.category} 
+  price={FakeData.price} />
 }
 
 function Home() {
