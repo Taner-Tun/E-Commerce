@@ -5,7 +5,9 @@ function Card_Items(props) {
   return (
     <div className="card-container">
       <h2>{props.title}</h2>
-      <p>{props.description}</p>
+      <img src={props.image} alt={props.title} />
+      <p>{props.category}</p>
+      <p>{props.price}</p>
     </div>
   )
 }
