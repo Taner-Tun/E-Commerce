@@ -1,6 +1,5 @@
 import React from "react"
 import "../scss/main.scss"
-import "./carditems.css"
 
 function Card_Items(props) {
   return (
