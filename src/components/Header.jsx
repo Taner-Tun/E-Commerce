@@ -11,9 +11,11 @@ const Header = (props) => {
     <>
       <Fragment>
         <header className="header">
-          <svg className="logo" alt="Jensen Deli" title="Jensen Deli">
-            <title>Jensen Deli</title>
-          </svg>
+          <Link to="/" alt="Jensen Deli" title="Jensen Deli">
+            <svg className="logo">
+              <title>Jensen Deli</title>
+            </svg>
+          </Link>
           <CartButton />
           <MainNavigation />
         </header>
