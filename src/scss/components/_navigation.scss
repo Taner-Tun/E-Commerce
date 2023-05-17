@@ -1,0 +1,18 @@
+@use "../utils/" as *;
+
+.nav-container {
+  display: flex;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    color: $color-light;
+    list-style: none;
+  }
+
+  li > a {
+    color: $color-light;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+}

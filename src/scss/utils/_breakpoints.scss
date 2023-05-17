@@ -29,7 +29,7 @@ $core-breakpoints: (
   @error $value + " is not available in $map.";
 }
 
-@mixin im-basic-breakpoint($value) {
+@mixin breakpoint($value) {
   $str: "min-width: " + get($core-breakpoints, $value);
   @media only screen and (#{$str}) {
     @content;
@@ -37,7 +37,7 @@ $core-breakpoints: (
 }
 
 .test {
-  @include im-basic-breakpoint("lg") {
+  @include breakpoint("lg") {
     padding-left: 30px;
     background-color: $color-primary;
   }
