@@ -6,6 +6,8 @@ function Products() {
   const [cart, setCart] = useState([]);
   const [amount, setAmount] = useState(0);
   const [itemCount, setItemCount] = useState(0);
+  const [searchText, setSearchText] = useState("");
+  const [filteredCart, setFilteredCart] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -22,8 +24,7 @@ function Products() {
     }
   };
 
-  const handleItemClick = (index, action) => {
-    const selectedProduct = cart[index];
+  const handleItemClick = (selectedProduct, action) => {
     switch (action) {
       case "add": {
         window.location.href = `/cart/${selectedProduct.itemid}`;
@@ -33,6 +34,7 @@ function Products() {
         break;
     }
   };
+  
   
   useEffect(() => {
     let totalPrice = 0;
@@ -45,16 +47,29 @@ function Products() {
     setItemCount(itemCount);
   }, [cart]);
 
+  useEffect(() => {
+    const filteredItems = cart.filter((item) =>
+      item.title.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setFilteredCart(filteredItems);
+  }, [cart, searchText]);
+
   return (
     <>
-      
       <div className="test">
         <h1 className="Cart">
-          Products Page <p>{cart.length}</p>
+          Products Page <p>{filteredCart.length}</p>
         </h1>
-        <h4>Products</h4>
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Search products"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+        </div>
       </div>
-      {cart.map((item, index) => (
+      {filteredCart.map((item, index) => (
         <ItemProduct
           key={item.itemid}
           itemid={item.itemid}
@@ -63,7 +78,7 @@ function Products() {
           category={item.category}
           price={item.price}
           count={item.count}
-          handleItemClick={(action) => handleItemClick(index, action)}
+          handleItemClick={(action) => handleItemClick(item, action)}
         />
       ))}
     </>
@@ -71,4 +86,3 @@ function Products() {
 }
 
 export default Products;
-
