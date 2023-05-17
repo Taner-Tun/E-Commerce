@@ -1,14 +1,6 @@
-import Card_Items from "../components/Card_Items"
-import FakeData from "../components/FakeData"
-
-function createData(FakeData) {
-  return <Card_Items 
-  key={FakeData.id} 
-  title={FakeData.title} 
-  image={FakeData.image}  
-  category={FakeData.category} 
-  price={FakeData.price} />
-}
+import React, { useState, useEffect } from "react";
+import Item from "../components/Item";
+import "../scss/main.scss";
 
 function Home() {
   const [cart, setCart] = useState([]);
@@ -31,7 +23,7 @@ function Home() {
   return (
     <>
       <h1>Main Page</h1>
-      {cart.map((item, index) => (
+      {cart.map((item) => (
         <Item
           key={item.itemid}
           itemid={item.itemid}
