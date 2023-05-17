@@ -12,16 +12,28 @@ function Cart() {
     fetchData();
   }, []);
 
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch("http://localhost:4000/data");
+  //     const data = await response.json();
+  //     console.log(data);
+  //     setCart(data.map((item) => ({ ...item, count: 1 })));
+  //   } catch (error) {
+  //     console.log("Error occurred:", error);
+  //   }
+  // };
+
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:4000/data");
+      const productId = window.location.pathname.split("/").pop();
+      const response = await fetch(`http://localhost:4000/data/${productId}`);
       const data = await response.json();
-      console.log(data);
-      setCart(data.map((item) => ({ ...item, count: 1 })));
+      setCart([{ ...data, count: 1 }]);
     } catch (error) {
       console.log("Error occurred:", error);
     }
   };
+  
 
   const handleItemClick = (index, action) => {
     const updatedCart = [...cart];

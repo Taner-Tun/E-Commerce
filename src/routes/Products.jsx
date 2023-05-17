@@ -23,19 +23,17 @@ function Products() {
   };
 
   const handleItemClick = (index, action) => {
-    const updatedCart = [...cart];
-    const item = updatedCart[index];
+    const selectedProduct = cart[index];
     switch (action) {
       case "add": {
-        window.location.href = "/cart";
+        window.location.href = `/cart/${selectedProduct.itemid}`;
         break;
       }
       default:
         break;
     }
-    setCart(updatedCart);
   };
-
+  
   useEffect(() => {
     let totalPrice = 0;
     let itemCount = 0;
