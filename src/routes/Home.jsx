@@ -4,6 +4,8 @@ import "../scss/main.scss";
 
 function Home() {
   const [cart, setCart] = useState([]);
+  const [amount, setAmount] = useState(0);
+  const [itemCount, setItemCount] = useState(0);
 
   useEffect(() => {
     fetchData();
@@ -20,10 +22,51 @@ function Home() {
     }
   };
 
+  const handleItemClick = (index, action) => {
+    const updatedCart = [...cart];
+    const item = updatedCart[index];
+    switch (action) {
+      case "+": {
+        item.count += 1;
+        break;
+      }
+      case "-": {
+        if (item.count > 1) {
+          item.count -= 1;
+        }
+        break;
+      }
+      case "delete": {
+        updatedCart.splice(index, 1);
+        break;
+      }
+      default:
+        break;
+    }
+    setCart(updatedCart);
+  };
+
+  useEffect(() => {
+    let totalPrice = 0;
+    let itemCount = 0;
+    cart.forEach((item) => {
+      totalPrice += item.price * item.count;
+      itemCount += item.count;
+    });
+    setAmount(totalPrice.toFixed(2));
+    setItemCount(itemCount);
+  }, [cart]);
+
   return (
     <>
       <h1>Main Page</h1>
-      {cart.map((item) => (
+      <div className="test">
+        <h1 className="Cart">
+          Shopping Cart <p>{cart.length}</p>
+        </h1>
+        <h4>Products</h4>
+      </div>
+      {cart.map((item, index) => (
         <Item
           key={item.itemid}
           itemid={item.itemid}
@@ -32,6 +75,7 @@ function Home() {
           category={item.category}
           price={item.price}
           count={item.count}
+          handleItemClick={(action) => handleItemClick(index, action)}
         />
       ))}
     </>
