@@ -1,17 +1,17 @@
-import Card_Items from "../components/Card_Items"
-import FakeData from "../components/FakeData"
-
-function createData(FakeData) {
-  return <Card_Items key={FakeData.id} title={FakeData.title} image={FakeData.image} category={FakeData.category} price={FakeData.price} />
-}
+import React from "react";
+import Item from "../components/Item";
+import Footer from '../components/Footer';
+import "../scss/main.scss";
 
 function Home() {
+  
   return (
-    <>
+    <div className="main-container">
       <h1>Main Page</h1>
-      {FakeData.map(createData)}
-    </>
-  )
+      {/* Your main page content... */}
+      <Footer />
+    </div>
+  );
 }
 
-export default Home
+export default Home;

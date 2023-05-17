@@ -15,7 +15,7 @@ function Item({itemid, image, title, category, price, count, handleItemClick}) {
         </h5>
         <h2>{price} kr</h2>
         <button className="delete" onClick={() => handleItemClick("delete")}>
-          Radera
+          Delete
         </button>
       </div>
       <div className="quantity">

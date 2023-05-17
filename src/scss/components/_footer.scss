@@ -1,0 +1,17 @@
+.footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  .footer p {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .main-container {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+  }
