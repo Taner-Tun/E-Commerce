@@ -69,6 +69,7 @@ function Products() {
           image={item.image}
           title={item.title}
           category={item.category}
+          description={item.description}
           price={item.price}
           count={item.count}
           handleItemClick={(action) => handleItemClick(item, action)}
