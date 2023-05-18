@@ -99,20 +99,27 @@ app.put('/data/:id', (req, res) => {
   const itemid = req.params.id;
   const { image, title, category, price } = req.body;
 
-  // Perform the update query
-  const sql = `UPDATE jensen_deli SET itemid = ?, image = ?, title = ?, category = ?, price = ? WHERE itemid = ?`;
-  const values = [itemid, image, title, category, price];
-
-  db.query(sql, values, (err, result) => {
+  pool.getConnection((err, connection) => {
     if (err) {
-      console.error("Error executing MySQL query:", err);
-      return res.status(500).json({ error: "Internal Server Error" });
-    }
+      console.error('Error connecting to MySQL database:', err);
+      res.status(500).json({ error: 'Internal server error' });
+    } else {
+      // Perform the update query
+      const sql = `UPDATE jensen_deli SET image = ?, title = ?, category = ?, price = ? WHERE itemid = ?`;
+      const values = [image, title, category, price, itemid];
 
-    res.json({ message: "Item updated successfully" });
+      connection.query(sql, values, (error, results) => {
+        connection.release();
+        if (error) {
+          console.error('Error executing MySQL query:', error);
+          res.status(500).json({ error: 'Internal server error' });
+        } else {
+          res.status(200).json({ message: 'Item updated successfully' });
+        }
+      });
+    }
   });
 });
-
 
 
 // DELETE route to delete data by ID

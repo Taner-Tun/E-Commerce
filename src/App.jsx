@@ -37,6 +37,7 @@
 
 // export default App
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {doc} from "prettier";
 import Header from "./components/Header";
 import RootLayout from "./routes/Root";
 import Home from "./routes/Home";

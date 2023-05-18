@@ -91,7 +91,7 @@ function Cart() {
         <div className="itemList">
           {cart.map((item, index) => (
             <Item
-              key={item.id}
+              key={`${item.id}-${index}`}
               itemid={item.id}
               image={item.image}
               title={item.title}
