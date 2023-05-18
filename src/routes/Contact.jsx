@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import "../scss/main.scss";
+import React, {useState} from "react"
+
+import Footer from "../components/Footer"
+import "../scss/main.scss"
 
 function Contact() {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("")
 
   const handleSendMessage = () => {
     // Logic for sending the message
-    const messageText = 'Your Message Received!'; 
-    setMessage(messageText);
-  };
+    const messageText = "Your Message Received!"
+    setMessage(messageText)
+  }
 
   return (
     <>
@@ -37,8 +39,9 @@ function Contact() {
           <p className="message-text">{message}</p>
         </div>
       </div>
+      <Footer />
     </>
-  );
+  )
 }
 
-export default Contact;
+export default Contact
