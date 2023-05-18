@@ -49,15 +49,30 @@ function Cart() {
         }
         break;
       }
+      //delete
       case "delete": {
         updatedCart.splice(index, 1);
+        // Remove cart data from local storage
+        localStorage.removeItem("cart");
         break;
       }
       default:
         break;
     }
+
+    // Store the updated cart data in local storage JSON.stringify store as string
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
     setCart(updatedCart);
   };
+
+  //retrive , get data from local storage ), []; will start with first render
+  // JSON.parse convert object
+  // ? means if storedCart is truthy (i.e., not null or undefined). 
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    const cartData = storedCart ? JSON.parse(storedCart) : [];
+    setCart(cartData);
+  }, []);
 
   useEffect(() => {
     let totalPrice = 0;
