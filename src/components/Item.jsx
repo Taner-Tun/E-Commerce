@@ -5,7 +5,7 @@ function Item({itemid, image, title, category, description, price, count, handle
   const totalPrice = (price * count).toFixed(2)
 
   return (
-    <div className="CartItem" id={itemid}>
+    <div className="CartItem" id={itemid} key={itemid}>
       <img src={image} alt={title} />
       <div className="details">
         <h4>{title}</h4>

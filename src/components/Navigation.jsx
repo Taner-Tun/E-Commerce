@@ -1,28 +1,30 @@
 import {Link} from "react-router-dom"
 
-import ErrorBoundary from "./ErrorBoundary"
+import {Fragment} from "react"
 
 function MainNavigation() {
   return (
-    <ErrorBoundary>
+    <Fragment>
       <nav className="nav-container">
         <ul>
-          Links:
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" tabIndex={2}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/products">Products</Link>
+            <Link to="/products" tabIndex={3}>
+              Products
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact Us</Link>
-          </li>
-          <li>
-            <Link to="/cart">Shopping Cart</Link>
+            <Link to="/contact" tabIndex={4}>
+              Contact Us
+            </Link>
           </li>
         </ul>
       </nav>
-    </ErrorBoundary>
+    </Fragment>
   )
 }
 export default MainNavigation

@@ -2,17 +2,32 @@
 
 .nav-container {
   display: flex;
+  background: $color-secondary;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 0;
+  justify-content: center;
 
   ul {
     display: flex;
     flex-direction: row;
     color: $color-light;
     list-style: none;
+    width: 800px;
+    justify-content: space-evenly;
   }
 
   li > a {
     color: $color-light;
+    border-radius: 35px;
     padding: 0 10px;
     text-decoration: none;
+
+    &:focus-visible,
+    &:hover {
+      outline: solid 2px $color-light;
+      outline-offset: 3px;
+    }
   }
 }
