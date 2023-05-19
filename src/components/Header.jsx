@@ -10,8 +10,8 @@ const Header = (props) => {
   return (
     <Fragment>
       <header className="header-container">
-        <Link to="/" alt="Jensen Deli" title="Jensen Deli" tabIndex={-1} disabled>
-          <svg className="logo" tabIndex={1}>
+        <Link className="header-logo-button" to="/" alt="Jensen Deli" title="Jensen Deli" tabIndex={1} aria-label="Jensen Deli">
+          <svg className="icon-logo">
             <title>Jensen Deli</title>
           </svg>
         </Link>

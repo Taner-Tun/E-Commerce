@@ -19,6 +19,17 @@ $header-height: calc($logo-height + 20px);
   }
 }
 
+.header-logo-button {
+  border-radius: 50%;
+  height: $logo-height;
+
+  &:hover,
+  &:focus-visible {
+    outline: solid 2px $color-light;
+    outline-offset: 3px;
+  }
+}
+
 .header-button {
   display: flex;
   position: relative;
