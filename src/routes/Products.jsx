@@ -58,21 +58,28 @@ function Products() {
     setItemCount(itemCount);
   }, [cart]);
 
-  useEffect(() => {
-    const filteredItems = cart.filter((item) =>
-      item.title.toLowerCase().includes(searchText.toLowerCase())
-    );
-    setFilteredCart(filteredItems);
-  }, [cart, searchText]);
+  // useEffect(() => {
+  //   const filteredItems = cart.filter((item) =>
+  //     item.title.toLowerCase().includes(searchText.toLowerCase())
+  //   );
+  //   setFilteredCart(filteredItems);
+  // }, [cart, searchText]);
+
+  // // useEffect(() => {
+  // //   const filteredItems = cart.filter((item) =>
+  // //     item.category.toLowerCase().includes(searchText.toLowerCase())
+  // //   );
+  // //   setFilteredCart(filteredItems);
+  // // }, [cart, searchText]);
 
   useEffect(() => {
     const filteredItems = cart.filter((item) =>
+      item.title.toLowerCase().includes(searchText.toLowerCase()) ||
       item.category.toLowerCase().includes(searchText.toLowerCase())
     );
     setFilteredCart(filteredItems);
   }, [cart, searchText]);
-
-
+  
   useEffect(() => {
     let sortedAndFilteredCart = [...cart];
   
