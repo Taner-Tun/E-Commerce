@@ -66,6 +66,14 @@ function Products() {
   }, [cart, searchText]);
 
   useEffect(() => {
+    const filteredItems = cart.filter((item) =>
+      item.category.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setFilteredCart(filteredItems);
+  }, [cart, searchText]);
+
+
+  useEffect(() => {
     let sortedAndFilteredCart = [...cart];
   
     if (sortBy === "price") {
