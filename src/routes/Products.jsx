@@ -1,8 +1,3 @@
-
-//    }
-
-//  export default Products
-
 import React, { useState, useEffect } from "react";
 import ItemProduct from "../components/ItemProduct";
 import Footer from "../components/Footer";
@@ -57,20 +52,6 @@ function Products() {
     setAmount(totalPrice.toFixed(2));
     setItemCount(itemCount);
   }, [cart]);
-
-  // useEffect(() => {
-  //   const filteredItems = cart.filter((item) =>
-  //     item.title.toLowerCase().includes(searchText.toLowerCase())
-  //   );
-  //   setFilteredCart(filteredItems);
-  // }, [cart, searchText]);
-
-  // // useEffect(() => {
-  // //   const filteredItems = cart.filter((item) =>
-  // //     item.category.toLowerCase().includes(searchText.toLowerCase())
-  // //   );
-  // //   setFilteredCart(filteredItems);
-  // // }, [cart, searchText]);
 
   useEffect(() => {
     const filteredItems = cart.filter((item) =>

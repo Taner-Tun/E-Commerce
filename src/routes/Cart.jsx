@@ -13,17 +13,6 @@ function Cart() {
     fetchData()
   }, [])
 
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await fetch("http://localhost:4000/data");
-  //     const data = await response.json();
-  //     console.log(data);
-  //     setCart(data.map((item) => ({ ...item, count: 1 })));
-  //   } catch (error) {
-  //     console.log("Error occurred:", error);
-  //   }
-  // };
-
   const fetchData = async () => {
     try {
       const productId = window.location.pathname.split("/").pop()
