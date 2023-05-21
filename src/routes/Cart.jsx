@@ -89,7 +89,6 @@ function Cart() {
         <h1 className="Cart">
           Shopping Cart <p>{cart.length}</p>
         </h1>
-        <h4>Products</h4>
       </div>
       <div className="main">
         <div className="itemList">
@@ -100,6 +99,7 @@ function Cart() {
               image={item.image}
               title={item.title}
               category={item.category}
+              description={item.description}
               price={item.price}
               count={item.count}
               handleItemClick={(action) => handleItemClick(index, action)}
