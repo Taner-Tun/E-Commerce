@@ -1,13 +1,18 @@
 @use "../utils/" as *;
+@use "../components/header" as *;
 
 .nav-container {
   display: flex;
+  // position: sticky;
+  top: $header-height;
+  width: 100%;
   background: $color-secondary;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   margin-left: auto;
   margin-right: auto;
   padding: 8px 0;
   justify-content: center;
+  z-index: 99;
 
   ul {
     display: flex;
