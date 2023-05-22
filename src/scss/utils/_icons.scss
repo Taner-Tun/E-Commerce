@@ -69,19 +69,19 @@ $logo-height: 100px;
   background: $color-primary;
 
   &:hover {
-    background-color: darken($color-primary, 10%);
+    background-color: $color-accent;
   }
 
   &:before {
     content: "";
     display: block;
     height: $logo-height;
+    border-radius: 50%;
     width: calc(1384 / 805 * $logo-height);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-image: $icon-logo-text;
     mask-repeat: no-repeat;
     mask-image: $icon-logo-text;
-
     background: $color-light;
   }
 }

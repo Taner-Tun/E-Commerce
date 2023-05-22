@@ -1,5 +1,9 @@
 @use "colors" as *;
 
+$header-width-lg: 1000px;
+$header-width-md: 600px;
+$header-width-sm: 400px;
+
 $core-breakpoints: (
   sm: 1px,
   md: 640px,
@@ -36,9 +40,79 @@ $core-breakpoints: (
   }
 }
 
-.test {
+.main-container {
+  transition: max-width 1s;
+  @include breakpoint("sm") {
+    max-width: $header-width-sm;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include breakpoint("md") {
+    max-width: $header-width-md;
+    margin-left: auto;
+    margin-right: auto;
+  }
   @include breakpoint("lg") {
-    padding-left: 30px;
-    background-color: $color-primary;
+    max-width: $header-width-lg;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.header-wrapper {
+  transition: max-width 1s;
+
+  @include breakpoint("sm") {
+    max-width: $header-width-sm;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include breakpoint("md") {
+    max-width: $header-width-md;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include breakpoint("lg") {
+    max-width: $header-width-lg;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.nav-container {
+  transition: max-width 1s;
+
+  @include breakpoint("sm") {
+    max-width: $header-width-sm;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include breakpoint("md") {
+    max-width: $header-width-md;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include breakpoint("lg") {
+    max-width: $header-width-lg;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.background {
+  @include breakpoint(sm) {
+    background-position-x: 40%;
+    background-position-y: -80px;
+  }
+  @include breakpoint(md) {
+    // background-position-y: 180%;
+  }
+  @include breakpoint(lg) {
+    background-position-y: 150%;
+  }
+  @include breakpoint(xl) {
+    background-position-y: 120%;
   }
 }

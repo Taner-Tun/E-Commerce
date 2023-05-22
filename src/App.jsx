@@ -36,32 +36,33 @@
 // }
 
 // export default App
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {doc} from "prettier";
-import Header from "./components/Header";
-import RootLayout from "./routes/Root";
-import Home from "./routes/Home";
-import Contact from "./routes/Contact";
-import Cart from "./routes/Cart";
-import Products from "./routes/Products";
-import ErrorPage from "./routes/Error";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import {doc} from "prettier"
+import RootLayout from "./routes/Root"
+import Home from "./routes/Home"
+import Contact from "./routes/Contact"
+import Cart from "./routes/Cart"
+import Products from "./routes/Products"
+import ErrorPage from "./routes/Error"
+import CartProvider from "./store/CartProvider"
 
 function App() {
   return (
-    <Router>
-      {/* <Header /> */}
-      <Routes>
-        <Route path="/" element={<RootLayout />}>
-          <Route index element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/cart/:id" element={<Cart />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Route>
-      </Routes>
-    </Router>
-  );
+    <CartProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<RootLayout />}>
+            <Route index element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart/:id" element={<Cart />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Route>
+        </Routes>
+      </Router>
+    </CartProvider>
+  )
 }
 
-export default App;
+export default App

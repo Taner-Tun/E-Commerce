@@ -1,6 +1,5 @@
 .Cart {
   display: flex;
-  margin-left: 50px;
 
   p {
     margin-left: 15px;
@@ -109,9 +108,15 @@
   display: block;
 }
 
-.test h4 {
+.products-wrapper h4 {
   color: black;
   font-weight: lighter;
-  margin-left: 60px;
   font-weight: bold;
+}
+
+.cart-main {
+  // min-height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
 }
