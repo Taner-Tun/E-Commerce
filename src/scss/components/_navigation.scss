@@ -20,20 +20,19 @@
 
   li > a {
     color: $color-dark;
-    background: $color-light;
+    background: white;
     border-radius: 35px;
-    padding: 6px 16px;
+    padding: 4px 16px;
     text-decoration: none;
     font-size: 20px;
     outline: transparent;
-    transition: background 0.4s, outline 0.2s;
+    transition: background 0.4s, outline 0.2s, box-shadow 0.2s;
 
     &:focus-visible,
     &:hover {
-      color: white;
-      background: $color-tone;
-      outline: solid 3px $color-dark;
+      outline: solid 3px $color-accent;
       outline-offset: 3px;
+      box-shadow: 0 0 1px 9px white;
     }
   }
 }
