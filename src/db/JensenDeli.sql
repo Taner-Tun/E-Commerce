@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `jensendeli_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `jensendeli_db`;
--- MySQL dump 10.13  Distrib 8.0.33, for macos13 (arm64)
+-- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: jensendeli_db
 -- ------------------------------------------------------
--- Server version	8.0.30
+-- Server version	8.0.33
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -32,7 +30,7 @@ CREATE TABLE `jensen_deli` (
   `description` varchar(255) NOT NULL DEFAULT 'Info',
   `price` decimal(10,2) NOT NULL DEFAULT '0.00',
   PRIMARY KEY (`itemid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +39,7 @@ CREATE TABLE `jensen_deli` (
 
 LOCK TABLES `jensen_deli` WRITE;
 /*!40000 ALTER TABLE `jensen_deli` DISABLE KEYS */;
-INSERT INTO `jensen_deli` VALUES (1,'test','Heman','Toy','The strongest man in the universe',299.00),(2,'test','Shera','Toy','The strongest woman in the universe',249.00),(3,'test','Skeletor','Toy','The main antagonist of the Masters of the Universe ',199.00),(4,'test','Orko','Toy','A sorcerer and friend of Heman',199.00),(5,'test','Cringer','Toy','Heman\'s feline companion',299.00);
+INSERT INTO `jensen_deli` VALUES (1,'test','Heman','meat','The strongest man in the universe',399.00),(2,'test','Heman','cheese','The strongest man in the universe',399.00),(3,'test','Skeletor','wine','The main antagonist of the Masters of the Universe ',199.00),(4,'test','Skeletor','meat','The main antagonist of the Masters of the Universe ',199.00),(5,'test','Cringer','wine','Info',899.00),(6,'test','fresh','cheese','Heman\'s feline companion',299.00),(7,'test','sparkling','wine','sparkling cool',199.00),(8,'test','fresh cheese','cheese','cheese is ok',70.00),(9,'test','pork','meat','pork goodie',15.00),(10,'test','pork','meat','pork goodie',99.00);
 /*!40000 ALTER TABLE `jensen_deli` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-18 23:32:06
+-- Dump completed on 2023-05-22 10:42:34
