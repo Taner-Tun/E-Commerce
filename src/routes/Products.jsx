@@ -1,6 +1,7 @@
 import React, {useState, useEffect, Fragment} from "react"
 import ItemProduct from "../components/ItemProduct"
 import Footer from "../components/Footer"
+import FilterProductMenu from "../components/FilterProductMenu"
 import "../scss/main.scss"
 
 function Products() {
@@ -79,6 +80,7 @@ function Products() {
   return (
     <Fragment>
       <div className="main-container">
+        <FilterProductMenu />
         <h1 className="Cart">Products Page {/* <p>{filteredCart.length}</p> */}</h1>
         <div className="search">
           <input type="text" placeholder="Search products" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
