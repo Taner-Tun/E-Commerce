@@ -44,24 +44,21 @@ import Contact from "./routes/Contact"
 import Cart from "./routes/Cart"
 import Products from "./routes/Products"
 import ErrorPage from "./routes/Error"
-import CartProvider from "./store/CartProvider"
 
 function App() {
   return (
-    <CartProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<RootLayout />}>
-            <Route index element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/cart/:id" element={<Cart />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Route>
-        </Routes>
-      </Router>
-    </CartProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart/:id" element={<Cart />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Route>
+      </Routes>
+    </Router>
   )
 }
 

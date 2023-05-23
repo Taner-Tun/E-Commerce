@@ -32,16 +32,16 @@ function Products() {
     }
   }
 
-  // const handleItemClick = (selectedProduct, action) => {
-  //   switch (action) {
-  //     case "add": {
-  //       window.location.href = `/cart/${selectedProduct.itemid}`
-  //       break
-  //     }
-  //     default:
-  //       break
-  //   }
-  // }
+  const handleItemClick = (selectedProduct, action) => {
+    switch (action) {
+      case "add": {
+        window.location.href = `/cart/${selectedProduct.itemid}`
+        break
+      }
+      default:
+        break
+    }
+  }
 
   useEffect(() => {
     let totalPrice = 0

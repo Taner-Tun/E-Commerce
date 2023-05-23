@@ -12,6 +12,7 @@ function Home() {
         <main>
           <div className="test-image"></div>
         </main>
+      </div>
       <Footer />
     </Fragment>
   )
