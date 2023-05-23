@@ -9,15 +9,15 @@ function Home() {
     <Fragment>
       <div className="main-container">
         <FilterProductMenu />
-      <div className="content-box">
-        <h1>Main Page</h1>
-        {/* Your main page content... */}
-        <main>
-          <div className="test-image"></div>
-        </main>
+        <div className="content-box">
+          <h1>Main Page</h1>
+          {/* Your main page content... */}
+          <main>
+            <div className="test-image"></div>
+          </main>
+        </div>
       </div>
       <Footer />
-      </div>
     </Fragment>
   )
 }
