@@ -17,6 +17,7 @@ function Home() {
         </main>
       </div>
       <Footer />
+      </div>
     </Fragment>
   )
 }
