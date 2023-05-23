@@ -1,3 +1,5 @@
+@use "../utils/" as *;
+
 .checkout {
   position: sticky;
   top: 30px;
@@ -20,7 +22,7 @@
   width: 250px;
   padding: 1rem 1rem;
   margin-top: 10px;
-  background: darkorange;
+  background: $color-primary;
   border: none;
   color: white;
   font-size: large;
@@ -35,7 +37,7 @@
 
 .description {
   margin-top: 10px;
-  background: rgba(255, 166, 0, 0.753);
+  background: $color-primary;
   padding: 0.5rem 1rem;
   color: white;
   text-align: justify;
@@ -78,7 +80,7 @@
 }
 
 .success-message {
-  color: green;
+  color: $color-blue;
   font-weight: bold;
   margin-top: 10px;
 }
