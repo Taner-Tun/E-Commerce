@@ -1,6 +1,7 @@
 import React, {useState, useEffect, Fragment} from "react"
 import ItemProduct from "../components/ItemProduct"
 import Footer from "../components/Footer"
+import FilterProductMenu from "../components/FilterProductMenu"
 import "../scss/main.scss"
 
 function Products() {
@@ -60,44 +61,14 @@ function Products() {
     setFilteredCart(filteredItems)
   }, [cart, searchText])
 
-  useEffect(() => {
-    let sortedAndFilteredCart = [...cart]
-
-    if (sortBy === "price") {
-      sortedAndFilteredCart.sort((a, b) => a.price - b.price)
-    } else if (sortBy === "title") {
-      sortedAndFilteredCart.sort((a, b) => a.title.localeCompare(b.title))
-    }
-
-    if (filterBy) {
-      sortedAndFilteredCart = sortedAndFilteredCart.filter((item) => item.category === filterBy)
-    }
-
-    setFilteredCart(sortedAndFilteredCart)
-  }, [cart, sortBy, filterBy])
-
   return (
     <Fragment>
       <div className="main-container">
+        <FilterProductMenu />
         <h1 className="Cart">Products Page {/* <p>{filteredCart.length}</p> */}</h1>
         <div className="search">
           <input type="text" placeholder="Search products" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
         </div>
-        <div className="filter-sort">
-          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-            <option value="">Sort By</option>
-            <option value="price">Price</option>
-            <option value="title">Title</option>
-          </select>
-
-          <select value={filterBy} onChange={(e) => setFilterBy(e.target.value)}>
-            <option value="">Filter By Category</option>
-            <option value="wine">Wine</option>
-            <option value="cheese">Cheese</option>
-            <option value="meat">Meat</option>
-          </select>
-        </div>
-
         <div className="product-wrapper">
           {filteredCart.length === 0 ? (
             <p>No products found.</p>

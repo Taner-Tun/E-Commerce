@@ -78,7 +78,7 @@ app.post("/data", (req, res) => {
       console.error("Error connecting to MySQL database:", err)
       res.status(500).json({error: "Internal server error"})
     } else {
-      const query = "INSERT INTO jensen_deli (itemid, image, description, title, category, price) VALUES (?, ?, ?, ?, ?, ?)"
+      const query = "INSERT INTO jensen_deli (itemid, image, title, category, description, price) VALUES (?, ?, ?, ?, ?, ?)"
       const values = [data.itemid, data.image, data.title, data.category, data.description, data.price]
 
       connection.query(query, values, (error, results) => {
@@ -106,7 +106,7 @@ app.put("/data/:id", (req, res) => {
     } else {
       // Perform the update query
       const sql = `UPDATE jensen_deli SET image = ?, title = ?, category = ?, description = ?, price = ? WHERE itemid = ?`
-      const values = [image, title, category, description, price, itemid]
+      const values = [itemid, image, title, category, description, price,]
 
       connection.query(sql, values, (error, results) => {
         connection.release()

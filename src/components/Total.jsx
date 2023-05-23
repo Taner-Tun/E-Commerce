@@ -19,18 +19,18 @@ function Total({ totalprice }) {
       <button onClick={handleCompleteOrder}>Complete Order</button>
       {orderCompleted ? (
         <p className="success-message">Order completed successfully!</p>
-      ) : totalprice >= 5000 ? (
+      ) : totalprice >= 300 ? (
         <p className="description">Free Delivery</p>
       ) : (
         <p className="description">
-          If you order more than 5000 kr, free delivery
+          If you order more than 300 kr, free delivery
         </p>
       )}
       <div className="cargo">
         <div className="cargoamount">
           <p>Cargo</p>
           <p className="freeshipping">Free Delivery</p>
-          <p className="cargoamountkr">5000 kr</p>
+          <p className="cargoamountkr">300 kr</p>
         </div>
         <div className="ordertotal">
           <p>Products</p>
