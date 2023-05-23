@@ -7,13 +7,11 @@ function Home() {
   return (
     <Fragment>
       <div className="main-container">
-      <div className="content-box">
         <h1>Main Page</h1>
         {/* Your main page content... */}
         <main>
           <div className="test-image"></div>
         </main>
-      </div>
       <Footer />
       </div>
     </Fragment>
