@@ -1,97 +1,87 @@
-import React, { useState, useEffect } from "react";
-import ItemProduct from "../components/ItemProduct";
-import Footer from "../components/Footer";
-import "../scss/main.scss";
+import React, {useState, useEffect, Fragment} from "react"
+import ItemProduct from "../components/ItemProduct"
+import Footer from "../components/Footer"
+import "../scss/main.scss"
 
 function Products() {
-  const [cart, setCart] = useState([]);
-  const [amount, setAmount] = useState(0);
-  const [itemCount, setItemCount] = useState(0);
-  const [searchText, setSearchText] = useState("");
-  const [sortBy, setSortBy] = useState("");
-  const [filterBy, setFilterBy] = useState("");
-  const [filteredCart, setFilteredCart] = useState([]);
+  const [cart, setCart] = useState([])
+  const [amount, setAmount] = useState(0)
+  const [itemCount, setItemCount] = useState(0)
+  const [searchText, setSearchText] = useState("")
+  const [sortBy, setSortBy] = useState("")
+  const [filterBy, setFilterBy] = useState("")
+  const [filteredCart, setFilteredCart] = useState([])
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:4000/data");
+      const response = await fetch("http://localhost:4000/data")
       if (!response.ok) {
-        throw new Error("Failed to fetch products");
+        throw new Error("Failed to fetch products")
       }
-      const data = await response.json();
-      console.log(data);
-      setCart(data.map((item) => ({ ...item, count: 1 })));
+      const data = await response.json()
+      console.log(data)
+      setCart(data.map((item) => ({...item, count: 1})))
     } catch (error) {
-      console.log("Error occurred:", error);
-      setCart([]);
+      console.log("Error occurred:", error)
+      setCart([])
     }
-  };
+  }
 
   const handleItemClick = (selectedProduct, action) => {
     switch (action) {
       case "add": {
-        window.location.href = `/cart/${selectedProduct.itemid}`;
-        break;
+        window.location.href = `/cart/${selectedProduct.itemid}`
+        break
       }
       default:
-        break;
+        break
     }
-  };
+  }
 
   useEffect(() => {
-    let totalPrice = 0;
-    let itemCount = 0;
+    let totalPrice = 0
+    let itemCount = 0
     cart.forEach((item) => {
-      totalPrice += item.price * item.count;
-      itemCount += item.count;
-    });
-    setAmount(totalPrice.toFixed(2));
-    setItemCount(itemCount);
-  }, [cart]);
+      totalPrice += item.price * item.count
+      itemCount += item.count
+    })
+    setAmount(totalPrice.toFixed(2))
+    setItemCount(itemCount)
+  }, [cart])
 
   useEffect(() => {
-    const filteredItems = cart.filter((item) =>
-      item.title.toLowerCase().includes(searchText.toLowerCase()) ||
-      item.category.toLowerCase().includes(searchText.toLowerCase())
-    );
-    setFilteredCart(filteredItems);
-  }, [cart, searchText]);
-  
+    const filteredItems = cart.filter(
+      (item) => item.title.toLowerCase().includes(searchText.toLowerCase()) || item.category.toLowerCase().includes(searchText.toLowerCase())
+    )
+    setFilteredCart(filteredItems)
+  }, [cart, searchText])
+
   useEffect(() => {
-    let sortedAndFilteredCart = [...cart];
-  
+    let sortedAndFilteredCart = [...cart]
+
     if (sortBy === "price") {
-      sortedAndFilteredCart.sort((a, b) => a.price - b.price);
+      sortedAndFilteredCart.sort((a, b) => a.price - b.price)
     } else if (sortBy === "title") {
-      sortedAndFilteredCart.sort((a, b) => a.title.localeCompare(b.title));
+      sortedAndFilteredCart.sort((a, b) => a.title.localeCompare(b.title))
     }
-  
+
     if (filterBy) {
-      sortedAndFilteredCart = sortedAndFilteredCart.filter(
-        (item) => item.category === filterBy
-      );
+      sortedAndFilteredCart = sortedAndFilteredCart.filter((item) => item.category === filterBy)
     }
-  
-    setFilteredCart(sortedAndFilteredCart);
-  }, [cart, sortBy, filterBy]);
-  
+
+    setFilteredCart(sortedAndFilteredCart)
+  }, [cart, sortBy, filterBy])
+
   return (
-    <>
-      <div className="test">
-        <h1 className="Cart">
-          Products Page <p>{filteredCart.length}</p>
-        </h1>
+    <Fragment>
+      <div className="main-container">
+        <h1 className="Cart">Products Page {/* <p>{filteredCart.length}</p> */}</h1>
         <div className="search">
-          <input
-            type="text"
-            placeholder="Search products"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-          />
+          <input type="text" placeholder="Search products" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
         </div>
         <div className="filter-sort">
           <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -99,7 +89,7 @@ function Products() {
             <option value="price">Price</option>
             <option value="title">Title</option>
           </select>
-  
+
           <select value={filterBy} onChange={(e) => setFilterBy(e.target.value)}>
             <option value="">Filter By Category</option>
             <option value="wine">Wine</option>
@@ -107,30 +97,30 @@ function Products() {
             <option value="meat">Meat</option>
           </select>
         </div>
-      </div>
-      <div className="product-container">
-        {filteredCart.length === 0 ? (
-          <p>No products found.</p>
-        ) : (
-          filteredCart.map((item, index) => (
-            <ItemProduct
-              key={item.itemid}
-              itemid={item.itemid}
-              image={item.image}
-              title={item.title}
-              category={item.category}
-              description={item.description}
-              price={item.price}
-              count={item.count}
-              handleItemClick={(action) => handleItemClick(item, action)}
-            />
-          ))
-        )}
+
+        <div className="product-wrapper">
+          {filteredCart.length === 0 ? (
+            <p>No products found.</p>
+          ) : (
+            filteredCart.map((item, index) => (
+              <ItemProduct
+                key={item.itemid}
+                itemid={item.itemid}
+                image={item.image}
+                title={item.title}
+                category={item.category}
+                description={item.description}
+                price={item.price}
+                count={item.count}
+                handleItemClick={(action) => handleItemClick(item, action)}
+              />
+            ))
+          )}
+        </div>
       </div>
       <Footer />
-    </>
-  );
-
+    </Fragment>
+  )
 }
 
-  export default Products
+export default Products

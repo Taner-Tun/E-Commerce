@@ -3,6 +3,10 @@
 // The font names are Prata and Lato
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Prata&display=swap");
 
+:root {
+  font-family: Prata, Open-Sans;
+}
+
 h1 {
   font-family: Prata, Open-Sans;
   font-size: 2em;

@@ -3,20 +3,40 @@
 $header-height: calc($logo-height + 20px);
 
 .header-container {
-  position: sticky;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.background {
+  position: relative;
+  background-color: $color-secondary;
+  background-image: url("./src/images/bg4.webp");
+  background-size: cover;
+  // background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(1px);
+  }
 }
 
 .header-wrapper {
   // position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: $header-height;
-  background-color: $color-secondary;
+  // height: $header-height;
+  // background-color: $color-secondary;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
+  padding: 10px 0;
   z-index: 10;
 
   h1 {
@@ -25,20 +45,23 @@ $header-height: calc($logo-height + 20px);
 }
 
 .header-logo-button {
+  position: relative;
   border-radius: 50%;
   transform: rotate(-8deg);
   height: $logo-height;
+  width: calc(1417 / 1086 * $logo-height + 4px);
 
   &:hover,
   &:focus-visible {
-    outline: solid 2px $color-light;
-    outline-offset: 3px;
+    outline: solid 3px $color-accent;
+    outline-offset: 4px;
+    background-color: white;
+    box-shadow: 0 0 1px 9px white;
   }
 }
 
 .header-button {
   display: flex;
-  position: relative;
   cursor: pointer;
   font: inherit;
   border: none;
@@ -49,50 +72,30 @@ $header-height: calc($logo-height + 20px);
   align-items: center;
   border-radius: 25px;
   font-weight: bold;
+  transition: background 0.4s, outline 0.2s, box-shadow 0.2s;
 
-  &:hover {
-    background-color: darken($color-primary, 10%);
-    outline: solid 2px $color-light;
+  &:hover,
+  &:focus-visible {
+    background: $color-accent;
+    outline: solid 3px $color-primary;
     outline-offset: 3px;
+    box-shadow: 0 0 1px 9px white;
   }
 
   &:hover &-badge {
     color: darken($color-primary, 10%);
   }
 
-  &:focus-visible {
-    outline: solid 2px $color-light;
-    outline-offset: 3px;
-  }
-  .bump {
-    animation: bump 300ms ease-out;
-  }
-
-  @keyframes bump {
-    0% {
-      transform: scale(1);
-    }
-    10% {
-      transform: scale(0.9);
-    }
-    30% {
-      transform: scale(1.1);
-    }
-    50% {
-      transform: scale(1.15);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
   &-badge {
-    background: $color-light;
-    height: 25px;
-    width: 25px;
+    position: relative;
+    background: white;
+    height: $icon-size;
+    width: $icon-size;
+    top: -2px;
     border-radius: 50%;
-    margin-left: 0.6rem;
+    margin-left: 1rem;
     text-align: center;
     color: $color-primary;
+    line-height: 28px;
   }
 }
