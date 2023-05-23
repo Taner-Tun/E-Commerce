@@ -61,22 +61,6 @@ function Products() {
     setFilteredCart(filteredItems)
   }, [cart, searchText])
 
-  useEffect(() => {
-    let sortedAndFilteredCart = [...cart]
-
-    if (sortBy === "price") {
-      sortedAndFilteredCart.sort((a, b) => a.price - b.price)
-    } else if (sortBy === "title") {
-      sortedAndFilteredCart.sort((a, b) => a.title.localeCompare(b.title))
-    }
-
-    if (filterBy) {
-      sortedAndFilteredCart = sortedAndFilteredCart.filter((item) => item.category === filterBy)
-    }
-
-    setFilteredCart(sortedAndFilteredCart)
-  }, [cart, sortBy, filterBy])
-
   return (
     <Fragment>
       <div className="main-container">
@@ -85,21 +69,6 @@ function Products() {
         <div className="search">
           <input type="text" placeholder="Search products" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
         </div>
-        <div className="filter-sort">
-          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-            <option value="">Sort By</option>
-            <option value="price">Price</option>
-            <option value="title">Title</option>
-          </select>
-
-          <select value={filterBy} onChange={(e) => setFilterBy(e.target.value)}>
-            <option value="">Filter By Category</option>
-            <option value="wine">Wine</option>
-            <option value="cheese">Cheese</option>
-            <option value="meat">Meat</option>
-          </select>
-        </div>
-
         <div className="product-wrapper">
           {filteredCart.length === 0 ? (
             <p>No products found.</p>
