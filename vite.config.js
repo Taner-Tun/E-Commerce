@@ -4,7 +4,7 @@ import {defineConfig} from "vite"
 export default defineConfig({
   plugins: [react()],
   build: {
-    assetsDir: "src/images/",
+    assetsDir: "/src/images/",
   },
   server: {
     proxy: {
