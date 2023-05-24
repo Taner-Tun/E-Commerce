@@ -45,11 +45,16 @@ function ItemProduct({ itemid, image, title, category, description, price, count
     setQuantity(prevQuantity => prevQuantity + 1);
   };
 
+   const handleDecrement = () => {
+    if(quantity > 1)
+    setQuantity(prevQuantity => prevQuantity - 1);
+   }
+
   const imageLocation = `/src/images/products/${image}`
 
   return (
     <div className="CartItem" id={itemid}>
-      <img src={image} alt={title} />
+      <img src={imageLocation} alt={title} />
       <div className="details">
         <h4>{title}</h4>
         <h6>{category}</h6>
