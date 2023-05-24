@@ -42,10 +42,6 @@ const FilterProductMenu = () => {
           // Logic for filtering price from highest to lowest
           console.log("Filtering Price (Highest to Lowest)");
           break;
-        case "ProductName":
-          // Logic for filtering by product name
-          console.log("Filtering by Product Name");
-          break;
         default:
           console.log(`Invalid filter type: ${filterType}`);
       }
@@ -83,7 +79,6 @@ const FilterProductMenu = () => {
             <option value="Cheese">Cheese</option>
           </select>
         </li>
-        <li onClick={() => handleFilter("ProductName")}>Product Name</li>
       </ul>
     </div>
   );
