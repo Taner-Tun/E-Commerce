@@ -4,7 +4,7 @@ import Total from "../components/Total"
 import Footer from "../components/Footer"
 import "../scss/main.scss"
 
-function Cart() {
+function ShoppingCart() {
   const [cart, setCart] = useState([])
   const [amount, setAmount] = useState(0)
   const [itemCount, setItemCount] = useState(0)
@@ -118,4 +118,4 @@ function Cart() {
   )
 }
 
-export default Cart
+export default ShoppingCart

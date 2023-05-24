@@ -4,7 +4,7 @@ import "../scss/main.scss"
 
 const CartButton = (props) => {
   return (
-    <Link to="/cart" tabIndex="-1">
+    <Link to="/shoppingcart" tabIndex="-1">
       <button className="header-button" tabIndex={5} aria-label="shopping cart" title="Shopping Cart">
         <span className="ui-svg">
           <svg className="icon-cart"></svg>

@@ -41,7 +41,7 @@ import {doc} from "prettier"
 import RootLayout from "./routes/Root"
 import Home from "./routes/Home"
 import Contact from "./routes/Contact"
-import Cart from "./routes/Cart"
+import ShoppingCart from "./routes/ShoppingCart"
 import Products from "./routes/Products"
 import ErrorPage from "./routes/Error"
 
@@ -52,8 +52,8 @@ function App() {
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/cart/:id" element={<Cart />} />
+          <Route path="/shoppingcart" element={<ShoppingCart />} />
+          <Route path="/shoppingcart/:id" element={<ShoppingCart />} />
           <Route path="/products" element={<Products />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
