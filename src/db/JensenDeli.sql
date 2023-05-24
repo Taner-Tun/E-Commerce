@@ -1,11 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `jensendeli_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `jensendeli_db`;
-
--- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.33, for macos13 (arm64)
 --
 -- Host: localhost    Database: jensendeli_db
 -- ------------------------------------------------------
--- Server version	8.0.33
+-- Server version	8.0.30
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -42,7 +41,7 @@ CREATE TABLE `jensen_deli` (
 
 LOCK TABLES `jensen_deli` WRITE;
 /*!40000 ALTER TABLE `jensen_deli` DISABLE KEYS */;
-INSERT INTO `jensen_deli` VALUES (1,'test','Ribeye Steak','Meat','Juicy and tender ribeye steak, perfectly marbled for exceptional flavor and texture.',19.99),(2,'test','Gouda Cheese','Cheese','A semi-hard cheese with a creamy texture and a nutty, buttery flavor.',8.99),(3,'test','Cabernet Sauvignon','Wine','Full-bodied red wine with rich flavors of blackcurrant, cherry, and cedar.',29.99),(4,'test','Chicken Breast','Meat','Boneless and skinless chicken breast, perfect for grilling or baking.',9.99),(5,'test','Blue Cheese','Cheese','A pungent and creamy cheese with blue veins, delivering a bold and tangy flavor.',11.99),(6,'test','Chardonnay','Wine','A crisp and refreshing white wine with notes of citrus and tropical fruits.',24.99),(7,'test','Salmon Fillet','Meat','Fresh and flavorful salmon fillet, ideal for grilling, baking, or pan-searing.',14.99),(8,'test','Parmesan Cheese','Cheese','A hard and aged cheese with a sharp and nutty flavor, perfect for grating over pasta.',10.99),(9,'test','Merlot','Wine','A smooth and velvety red wine with notes of plum, blackberry, and chocolate.',27.99),(10,'test','Pork Chop','Meat','Juicy and flavorful pork chop, perfect for grilling or pan-frying.',12.99),(11,'test','Cheddar Cheese','Cheese','A classic cheese with a sharp and tangy flavor, perfect for sandwiches and melting.',7.99),(12,'test','Pinot Noir','Wine','An elegant red wine with delicate flavors of red berries and earthy notes.',26.99),(13,'test','Ground Beef','Meat','High-quality ground beef, perfect for making burgers, meatballs, or meat sauces.',10.99),(14,'test','Goat Cheese','Cheese','A creamy and tangy cheese made from goat\'s milk, ideal for salads and spreading on crackers.',9.99),(15,'test','Syrah','Wine','A bold and robust red wine with intense flavors of black fruits and hints of spices.',32.99);
+INSERT INTO `jensen_deli` VALUES (1,'meat4.webp','Ribeye Steak','Meat','Juicy and tender ribeye steak, perfectly marbled for exceptional flavor and texture.',19.99),(2,'cheese3.webp','Gouda Cheese','Cheese','A semi-hard cheese with a creamy texture and a nutty, buttery flavor.',8.99),(3,'wine3.webp','Cabernet Sauvignon','Wine','Full-bodied red wine with rich flavors of blackcurrant, cherry, and cedar.',29.99),(4,'meat6.webp','Chicken Breast','Meat','Boneless and skinless chicken breast, perfect for grilling or baking.',9.99),(5,'cheese4.webp','Blue Cheese','Cheese','A pungent and creamy cheese with blue veins, delivering a bold and tangy flavor.',11.99),(6,'wine1.webp','Chardonnay','Wine','A crisp and refreshing white wine with notes of citrus and tropical fruits.',24.99),(7,'meat5.webp','Salmon Fillet','Meat','Fresh and flavorful salmon fillet, ideal for grilling, baking, or pan-searing.',14.99),(8,'cheese2.webp','Parmesan Cheese','Cheese','A hard and aged cheese with a sharp and nutty flavor, perfect for grating over pasta.',10.99),(9,'wine2.webp','Merlot','Wine','A smooth and velvety red wine with notes of plum, blackberry, and chocolate.',27.99),(10,'meat3.webp','Lamb Chop','Meat','Juicy and flavorful lamb chop, perfect for grilling or pan-frying.',12.99),(11,'cheese5.webp','Cheddar Cheese','Cheese','A classic cheese with a sharp and tangy flavor, perfect for sandwiches and melting.',7.99),(12,'wine5.webp','Pinot Noir','Wine','An elegant red wine with delicate flavors of red berries and earthy notes.',26.99),(13,'meat1.webp','Ground Beef','Meat','High-quality ground beef, perfect for making burgers, meatballs, or meat sauces.',10.99),(14,'cheese1.webp','Goat Cheese','Cheese','A creamy and tangy cheese made from goat\'s milk, ideal for salads and spreading on crackers.',9.99),(15,'wine4.webp','Syrah','Wine','A bold and robust red wine with intense flavors of black fruits and hints of spices.',32.99);
 /*!40000 ALTER TABLE `jensen_deli` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-23 17:16:21
+-- Dump completed on 2023-05-24  8:46:30
