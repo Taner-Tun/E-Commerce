@@ -36,7 +36,8 @@ function Products() {
   const handleItemClick = (selectedProduct, action) => {
     switch (action) {
       case "add": {
-        window.location.href = `/cart/${selectedProduct.itemid}`;
+        // window.location.href = '/shoppingcart';
+        window.location.href = `/shoppingcart/${selectedProduct.itemid}`;
         break;
       }
       default:
@@ -120,7 +121,7 @@ function Products() {
                 description={item.description}
                 price={item.price}
                 count={item.count}
-                // handleItemClick={(action) => handleItemClick(item, action)}
+                handleItemClick={(action) => handleItemClick(item, action)}
               />
             ))
           )}

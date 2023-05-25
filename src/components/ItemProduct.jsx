@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import "../scss/main.scss";
 
 function ItemProduct({ itemid, image, title, category, description, price, count, handleItemClick }) {
-  const [buttonView, setButtonView] = useState("add"); // State variable for button view
+  // const [buttonView, setButtonView] = useState("add"); // State variable for button view
   const [quantity, setQuantity] = useState(count); // State variable for quantity
   const totalPrice = (price * quantity).toFixed(2);
 
-  const handleButtonClick = () => {
-    if (buttonView === "add") {
-      setButtonView("quantity");
-      handleItemClick("add");
-    }
-  };
+  // const handleButtonClick = () => {
+  //   if (buttonView === "add") {
+  //     setButtonView("quantity");
+  //     handleItemClick("add");
+  //   }
+  // };
 
   const handleIncrement = () => {
     setQuantity(prevQuantity => prevQuantity + 1);
@@ -32,12 +32,15 @@ function ItemProduct({ itemid, image, title, category, description, price, count
         <h6>{category}</h6>
         <h4>{description}</h4>
         <h2>{price} kr</h2>
-        {buttonView === "add" ? (
+        {/* {buttonView === "add" ? (
           <button className="add" onClick={handleButtonClick}>
             Add to Cart
           </button>
-        ) : (
-          <div className="quantity">
+        ) : ( */}
+          <button className="add" onClick={() => handleItemClick("add")}>
+        Add to Cart
+         </button>
+          {/* <div className="quantity">
             <button className="decrement" onClick={handleDecrement}>
               -
             </button>
@@ -45,8 +48,8 @@ function ItemProduct({ itemid, image, title, category, description, price, count
             <button className="increment" onClick={handleIncrement}>
               +
             </button>
-          </div>
-        )}
+          </div> */}
+        
       </div>
     </div>
   );

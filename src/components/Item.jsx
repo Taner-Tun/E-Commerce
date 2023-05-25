@@ -4,9 +4,11 @@ import "../scss/main.scss"
 function Item({itemid, image, title, category, description, price, count, handleItemClick}) {
   const totalPrice = (price * count).toFixed(2)
 
+  const imageLocation = `/src/images/products/${image}`
+
   return (
     <div className="CartItem" id={itemid} key={itemid}>
-      <img src={image} alt={title} />
+      <img src={imageLocation} alt={title} />
       <div className="details">
         <h4>{title}</h4>
         <h6>{category}</h6>
