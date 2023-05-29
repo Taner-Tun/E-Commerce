@@ -8,28 +8,45 @@ function ShoppingCart() {
   const [cart, setCart] = useState([])
   const [amount, setAmount] = useState(0)
   const [itemCount, setItemCount] = useState(0)
-
+let isFirstLoad=false;
   useEffect(() => {
+    if(!isFirstLoad)
+    {
     fetchData()
+    }
   }, [])
 
   const fetchData = async () => {
     try {
+      isFirstLoad=true;
+      const storedCart = localStorage.getItem("cart")
+      const cartData = storedCart ? JSON.parse(storedCart) : []
       const productId = window.location.pathname.split("/").pop()
+
+      if(productId !== 'shoppingcart') {
       const response = await fetch(`http://localhost:4000/data/${productId}`)
+
       const data = await response.json()
 
       // Check if the product is already in the cart
       const existingProductIndex = cart.findIndex((item) => item.id === data.id)
       if (existingProductIndex !== -1) {
         // Product already exists, update the count
-        const updatedCart = [...cart]
+        const updatedCart = [...cartData]
         updatedCart[existingProductIndex].count += 1
         setCart(updatedCart)
       } else {
         // Product doesn't exist, add it to the cart
-        setCart([...cart, {...data, count: 1}])
-      }
+        setCart([...cartData, {...data, count: 1}])
+      }      
+    }
+    else{
+      setCart([...cartData])
+
+    }
+
+
+
     } catch (error) {
       console.log("Error occurred:", error)
     }
@@ -60,11 +77,6 @@ function ShoppingCart() {
     setCart(updatedCart)
   }
 
-  useEffect(() => {
-    const storedCart = localStorage.getItem("cart")
-    const cartData = storedCart ? JSON.parse(storedCart) : []
-    setCart(cartData)
-  }, [])
 
   useEffect(() => {
     let totalPrice = 0
@@ -75,6 +87,8 @@ function ShoppingCart() {
     })
     setAmount(totalPrice.toFixed(2))
     setItemCount(itemCount)
+    localStorage.setItem("cart", JSON.stringify(cart))
+
   }, [cart])
 
   const calculateTotalWithShipping = (totalPrice) => {
