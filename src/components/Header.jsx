@@ -1,12 +1,10 @@
 import {Fragment} from "react"
 import {Link} from "react-router-dom"
-
 import "../scss/main.scss"
-
 import CartButton from "./CartButton"
 import Navigation from "./Navigation"
 
-const Header = (props) => {
+const Header = () => {
   return (
     <Fragment>
       <div>

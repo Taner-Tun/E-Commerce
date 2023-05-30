@@ -6,7 +6,6 @@ function RootLayout() {
   return (
     <>
       <Header />
-      {/* <Navigation /> */}
       <Outlet />
     </>
   )
