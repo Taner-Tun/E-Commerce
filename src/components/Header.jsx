@@ -18,8 +18,6 @@ const Header = () => {
           <Navigation />
         </header>
       </div>
-      <div className="social-media">
-  </div>
     </Fragment>
   )
 }
