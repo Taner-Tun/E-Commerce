@@ -25,10 +25,8 @@ function Products() {
         throw new Error("Failed to fetch products")
       }
       const data = await response.json()
-      console.log(data)
       setCart(data.map((item) => ({...item, count: 1})))
     } catch (error) {
-      console.log("Error occurred:", error)
       setCart([])
     }
   }
@@ -36,7 +34,6 @@ function Products() {
   const handleItemClick = (selectedProduct, action) => {
     switch (action) {
       case "add": {
-        // window.location.href = '/shoppingcart';
         window.location.href = `/shoppingcart/${selectedProduct.itemid}`
         break
       }
@@ -97,7 +94,7 @@ function Products() {
     <Fragment>
       <div className="main-container">
         <FilterProductMenu handleFilter={handleFilter} />
-        <h1 className="Cart">Products Page {/* <p>{filteredCart.length}</p> */}</h1>
+        <h1 className="Cart">Products Page</h1>
         <div className="search">
           <input type="text" placeholder="Search products" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
         </div>

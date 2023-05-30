@@ -1,5 +1,4 @@
 import React, {useState} from "react"
-
 import Footer from "../components/Footer"
 import "../scss/main.scss"
 

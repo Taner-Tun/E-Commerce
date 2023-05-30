@@ -1,11 +1,8 @@
-// import MainNav from "../components/MainNav"
-
 import {Link} from "react-router-dom"
 
 function ErrorPage() {
   return (
     <>
-      {/* <MainNav /> */}
       <main>
         <h1>An error has occured!</h1>
         <p>

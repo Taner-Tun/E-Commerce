@@ -69,7 +69,6 @@ app.get("/data/:id", (req, res) => {
 
 // POST route to add data
 app.post("/data", (req, res) => {
-  console.log("POST request received")
   const {itemid, image, title, category, description, price} = req.body
   const data = {itemid, image, title, category, description, price}
 

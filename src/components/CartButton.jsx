@@ -1,5 +1,4 @@
 import {Link} from "react-router-dom"
-
 import "../scss/main.scss"
 import {useEffect, useState} from "react"
 
