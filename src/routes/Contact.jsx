@@ -51,8 +51,8 @@ function Contact() {
   <div className="call">
     <h1>Call Us</h1>
     <h3>Opening Hours</h3>
-    <p>Måndag–fredag: 9-18</p>
-    <p>Lördag–söndag: Closed</p>
+    <p>Monday–friday: 9-18</p>
+    <p>Saturday–Sunday: Closed</p>
     <button className="btn1">078 768 500</button>
     <div className="social-media">
     <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
