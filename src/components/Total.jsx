@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import "../scss/main.scss";
+import React, {useState} from "react"
+import "../scss/main.scss"
 
-function Total({ totalprice }) {
-  const [orderCompleted, setOrderCompleted] = useState(false);
+function Total({totalprice}) {
+  const [orderCompleted, setOrderCompleted] = useState(false)
 
   const handleCompleteOrder = () => {
-   
-    setOrderCompleted(true);
-  };
+    setOrderCompleted(true)
+  }
 
   return (
     <div className="checkout">
@@ -22,9 +21,7 @@ function Total({ totalprice }) {
       ) : totalprice >= 300 ? (
         <p className="description">Free Delivery</p>
       ) : (
-        <p className="description">
-          If you order more than 300 kr, free delivery
-        </p>
+        <p className="description">If you order more than 300 kr, free delivery</p>
       )}
       <div className="cargo">
         <div className="cargoamount">
@@ -38,8 +35,7 @@ function Total({ totalprice }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Total;
-
+export default Total

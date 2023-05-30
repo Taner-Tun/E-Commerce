@@ -1,25 +1,23 @@
 import {Link} from "react-router-dom"
 
 import "../scss/main.scss"
-import { useEffect, useState } from "react"
+import {useEffect, useState} from "react"
 
 const CartButton = () => {
-    const [itemCount, setItemCount] = useState(0);
+  const [itemCount, setItemCount] = useState(0)
 
-    setInterval(()=>{
-        const storedCart = localStorage.getItem("cart")
+  setInterval(() => {
+    const storedCart = localStorage.getItem("cart")
 
-        const cartData = storedCart ? JSON.parse(storedCart) : []
-            let count=0;
-            if(cartData.length>0){
-                cartData.forEach((item) => {
-                    count += item.count
-                })
-                setItemCount(count)
-            }
-    },500)
-
-
+    const cartData = storedCart ? JSON.parse(storedCart) : []
+    let count = 0
+    if (cartData.length > 0) {
+      cartData.forEach((item) => {
+        count += item.count
+      })
+      setItemCount(count)
+    }
+  }, 500)
 
   return (
     <Link to="/shoppingcart" tabIndex="-1">

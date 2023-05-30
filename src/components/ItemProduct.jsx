@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import "../scss/main.scss";
+import React, {useState} from "react"
+import "../scss/main.scss"
 
-function ItemProduct({ itemid, image, title, category, description, price, count, handleItemClick }) {
+function ItemProduct({itemid, image, title, category, description, price, count, handleItemClick}) {
   // const [buttonView, setButtonView] = useState("add"); // State variable for button view
-  const [quantity, setQuantity] = useState(count); // State variable for quantity
-  const totalPrice = (price * quantity).toFixed(2);
+  const [quantity, setQuantity] = useState(count) // State variable for quantity
+  const totalPrice = (price * quantity).toFixed(2)
 
   // const handleButtonClick = () => {
   //   if (buttonView === "add") {
@@ -14,13 +14,12 @@ function ItemProduct({ itemid, image, title, category, description, price, count
   // };
 
   const handleIncrement = () => {
-    setQuantity(prevQuantity => prevQuantity + 1);
-  };
+    setQuantity((prevQuantity) => prevQuantity + 1)
+  }
 
-   const handleDecrement = () => {
-    if(quantity > 1)
-    setQuantity(prevQuantity => prevQuantity - 1);
-   }
+  const handleDecrement = () => {
+    if (quantity > 1) setQuantity((prevQuantity) => prevQuantity - 1)
+  }
 
   const imageLocation = `/src/images/products/${image}`
 
@@ -37,10 +36,10 @@ function ItemProduct({ itemid, image, title, category, description, price, count
             Add to Cart
           </button>
         ) : ( */}
-          <button className="add" onClick={() => handleItemClick("add")}>
-        Add to Cart
-         </button>
-          {/* <div className="quantity">
+        <button className="add" onClick={() => handleItemClick("add")}>
+          Add to Cart
+        </button>
+        {/* <div className="quantity">
             <button className="decrement" onClick={handleDecrement}>
               -
             </button>
@@ -49,10 +48,9 @@ function ItemProduct({ itemid, image, title, category, description, price, count
               +
             </button>
           </div> */}
-        
       </div>
     </div>
-  );
+  )
 }
 
-export default ItemProduct;
+export default ItemProduct
