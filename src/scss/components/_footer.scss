@@ -14,3 +14,31 @@
     flex-direction: column;
   }
 }
+
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
+.social-media a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  color: #4caf50;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.social-media a:hover {
+  background-color: #dddddd;
+}
+
+.social-media i {
+  font-size: 20px;
+}
+
