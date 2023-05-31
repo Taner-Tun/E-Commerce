@@ -71,9 +71,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../../assets/images/delicatessen-pastirma-meat-oran-et-bodrum-gurme-kasap-Şarkuteri-charcuterie-meat.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
+
+  & > img {
+    max-width: 100%;
+  }
 }
 
 .contact-section {
