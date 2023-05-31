@@ -8,7 +8,7 @@ function MainNavigation() {
       <nav className="nav-container">
         <ul>
           <li>
-            <Link to="/products" tabIndex={3} aria-label="Products" title="Products">
+            <Link to="/" tabIndex={3} aria-label="Products" title="Products">
               Products
             </Link>
           </li>

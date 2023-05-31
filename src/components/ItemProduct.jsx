@@ -13,7 +13,7 @@ function ItemProduct({itemid, image, title, category, description, price, count,
     if (quantity > 1) setQuantity((prevQuantity) => prevQuantity - 1)
   }
 
-  const imageLocation = `/src/images/products/${image}`
+  const imageLocation = `/src/assets/images/products/${image}`
 
   return (
     <div className="CartItem" id={itemid}>

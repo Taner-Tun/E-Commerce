@@ -4,7 +4,7 @@ import {defineConfig} from "vite"
 export default defineConfig({
   plugins: [react()],
   build: {
-    assetsDir: "/src/images/",
+    assetsDir: "/src/assets/images/",
   },
   server: {
     proxy: {
@@ -16,7 +16,7 @@ export default defineConfig({
       "/images": {
         target: "http://localhost:5173", // Replace with your frontend server URL
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/images/, ""),
+        rewrite: (path) => path.replace(/^\/assets/, ""),
       },
     },
   },
