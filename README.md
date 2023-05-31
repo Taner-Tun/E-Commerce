@@ -8,7 +8,7 @@ This project is designed to provide a customer for smooth online shopping experi
 
 ## Build
 
-This project has been built using Vite. Vite is a frontend developing environment that aims to provide a faster and leaner development experience for modern web projects.
+This project has been built using Vite. Vite is a frontend developing environment that aims to Provide a faster and leaner development experience for modern web projects.
 
 To create a project, simply type:
 
@@ -33,7 +33,7 @@ To start the server, open a new terminal and go to the root of the project.
 To start the server: `$ node server`
 
 Once you've gotten the project running with npm run dev there is no need to restart the npm or refresh\
-the browser when changes to the project have been made.
+he browser when changes to the project have been made.
 
 ## Github Contribution
 
@@ -60,3 +60,16 @@ Can be used to check the files rather than overwriting them.
 
 Figma was used to create the website wireframe and look of all components.
 [Link](https://www.figma.com/file/oQF8O5ObNvNEXUhdC2HlVR/JensenDeli?type=design&node-id=0%3A1&t=GEDD1oZhutEhzDks-1)
+
+## Agile/Scrum
+
+The scrum method, which is one of the agile project methods, was used in the project.\
+Trello used as for visual tool.
+
+## Database
+
+MySQL Workbench
+
+## Test API
+
+Postman
