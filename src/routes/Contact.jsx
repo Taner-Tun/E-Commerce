@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import Footer from "../components/Footer"
 import "../scss/main.scss"
+import meats from "../assets/images/meats.webp"
 
 function Contact() {
   const [message, setMessage] = useState("")
@@ -13,16 +14,14 @@ function Contact() {
 
   return (
     <>
-
-   
-    <div className="image">
-    <img src="https://p7.hiclipart.com/preview/727/202/526/delicatessen-pastirma-meat-oran-et-bodrum-gurme-kasap-%C5%9Earkuteri-charcuterie-meat.jpg" />
-    </div>
       <div className="main-container">
-    
+        <div className="image">
+          <img src={meats} alt="meats" />
+        </div>
+        <br />
+        <hr />
         <h1 className="contactus">Contact Us</h1>
         <div className="contact-container">
-   
           <form>
             <div className="contact-form-group">
               <label htmlFor="name">Name:</label>
@@ -48,14 +47,14 @@ function Contact() {
         </div>
       </div>
       <div className="contact-section">
-  <div className="call">
-    <h1>Call Us</h1>
-    <h3>Opening Hours</h3>
-    <p>Monday–friday: 9-18</p>
-    <p>Saturday–Sunday: Closed</p>
-    <button className="btn1">078 768 500</button>
-  </div>
-</div>
+        <div className="call">
+          <h1>Call Us</h1>
+          <h3>Opening Hours</h3>
+          <p>Monday–friday: 9-18</p>
+          <p>Saturday–Sunday: Closed</p>
+          <button className="btn1">078 768 500</button>
+        </div>
+      </div>
       <Footer />
     </>
   )

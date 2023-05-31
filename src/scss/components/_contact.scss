@@ -63,7 +63,7 @@
 .contactus {
   text-align: center;
   color: #4caf50;
-  
+
   margin-top: 0;
 }
 
@@ -71,6 +71,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url(../../assets/images/delicatessen-pastirma-meat-oran-et-bodrum-gurme-kasap-Şarkuteri-charcuterie-meat.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .contact-section {
@@ -117,4 +120,3 @@
 .call button.btn1:hover {
   background-color: #45a049;
 }
-
