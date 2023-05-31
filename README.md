@@ -24,11 +24,11 @@ To install and run the project, do the following steps:
 Clone the repository: git clone https://github.com/Taner-Tun/jensen_deli/tree/main
 Navigate to the project directory: cd project\
 Install dependencies: npm install\
-Start the application: npm run dev
+Start the application: npm run dev\
 Start server: node server.js
 
 Once you've gotten the project running with npm run dev there is no need to restart the npm or refresh\
-The browser when changes to the project have been made.
+he browser when changes to the project have been made.
 
 ## Github Contribution
 
@@ -59,5 +59,5 @@ Figma was used to create the website wireframe and look of all components.
 
 ## Agile/Scrum
 
-The scrum method, which is one of the agile project methods, was used in the project.
+The scrum method, which is one of the agile project methods, was used in the project.\
 Trello used as for visual tool.
