@@ -55,3 +55,8 @@ Can be used to check the files rather than overwriting them.
 Figma was used to create the website wireframe and look of all components.
 
 [Link](https://www.figma.com/file/oQF8O5ObNvNEXUhdC2HlVR/JensenDeli?type=design&node-id=0%3A1&t=GEDD1oZhutEhzDks-1)
+
+## Agile/Scrum
+
+The scrum method, which is one of the agile project methods, was used in the project.
+Trello used as for visual tool.
