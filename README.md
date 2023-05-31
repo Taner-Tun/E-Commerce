@@ -61,3 +61,11 @@ Figma was used to create the website wireframe and look of all components.
 
 The scrum method, which is one of the agile project methods, was used in the project.\
 Trello used as for visual tool.
+
+## Database
+
+MySQL Workbench
+
+##  Test API
+
+Postman
