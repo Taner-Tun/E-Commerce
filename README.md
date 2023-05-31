@@ -8,7 +8,7 @@ This project is designed to provide a customer for smooth online shopping experi
 
 ## Build
 
-This project has been built using Vite. Vite is a frontend developing environment that aims to provide a faster and leaner development experience for modern web projects.
+This project has been built using Vite. Vite is a frontend developing environment that aims to Provide a faster and leaner development experience for modern web projects.
 
 To create a project, simply type:
 
@@ -25,9 +25,10 @@ Clone the repository: git clone https://github.com/Taner-Tun/jensen_deli/tree/ma
 Navigate to the project directory: cd project\
 Install dependencies: npm install\
 Start the application: npm run dev
+Start server: node server.js
 
 Once you've gotten the project running with npm run dev there is no need to restart the npm or refresh\
-the browser when changes to the project have been made.
+The browser when changes to the project have been made.
 
 ## Github Contribution
 
