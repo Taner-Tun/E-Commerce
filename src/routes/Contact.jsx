@@ -20,6 +20,7 @@ function Contact() {
         </div>
         <br />
         <hr />
+        <br />
         <h1 className="contactus">Contact Us</h1>
         <div className="contact-container">
           <form>
