@@ -3,18 +3,18 @@
 
 .nav-container {
   display: flex;
-  position: relative;
-  margin: 0 auto;
-  padding: 8px 0;
-  justify-content: center;
-  z-index: 99;
+  position: absolute;
+  // padding: 8px 0;
+  bottom: 14px;
+
+  // z-index: 99;
 
   ul {
     display: flex;
     flex-direction: row;
     color: $color-light;
     list-style: none;
-    width: 800px;
+    // width: 800px;
     justify-content: space-evenly;
   }
 
@@ -30,7 +30,9 @@
 
     &:focus-visible,
     &:hover {
-      outline: solid 3px $color-accent;
+      color: white;
+      background: $color-accent;
+      outline: solid 3px $color-primary;
       outline-offset: 3px;
       box-shadow: 0 0 1px 9px white;
     }

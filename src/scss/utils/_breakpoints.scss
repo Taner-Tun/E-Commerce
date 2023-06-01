@@ -1,5 +1,8 @@
 @use "colors" as *;
 
+$logo-height: 180px !default;
+// $header-height: calc($logo-height + 20px);
+
 $header-width-lg: 1000px;
 $header-width-md: 600px;
 $header-width-sm: 400px;
@@ -67,38 +70,58 @@ $core-breakpoints: (
     max-width: $header-width-sm;
     margin-left: auto;
     margin-right: auto;
+
+    .header-logo-button {
+      $logo-height: 120px;
+
+      height: $logo-height;
+      width: calc(1417 / 1086 * $logo-height + 4px);
+    }
   }
 
   @include breakpoint("md") {
     max-width: $header-width-md;
     margin-left: auto;
     margin-right: auto;
+
+    .header-logo-button {
+      $logo-height: 150px;
+      height: $logo-height;
+      width: calc(1417 / 1086 * $logo-height + 4px);
+    }
   }
+
   @include breakpoint("lg") {
     max-width: $header-width-lg;
     margin-left: auto;
     margin-right: auto;
+
+    .header-logo-button {
+      $logo-height: 180px;
+      height: $logo-height;
+      width: calc(1417 / 1086 * $logo-height + 4px);
+    }
   }
 }
 
 .nav-container {
-  transition: max-width 1s;
+  // transition: justify-content 1s;
 
   @include breakpoint("sm") {
-    max-width: $header-width-sm;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: flex-end;
+    right: 0;
+    left: none;
   }
 
   @include breakpoint("md") {
-    max-width: $header-width-md;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: flex-end;
+    left: 0;
+    right: 0;
   }
   @include breakpoint("lg") {
-    max-width: $header-width-lg;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -108,12 +131,12 @@ $core-breakpoints: (
     background-position-y: 100%;
   }
   @include breakpoint(md) {
-    background-position-y: 100%;
+    background-position-y: 70%;
   }
   @include breakpoint(lg) {
-    background-position-y: 92%;
+    background-position-y: 70%;
   }
   @include breakpoint(xl) {
-    background-position-y: 84%;
+    background-position-y: 70%;
   }
 }
