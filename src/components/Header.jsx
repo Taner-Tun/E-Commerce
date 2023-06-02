@@ -14,8 +14,8 @@ const Header = () => {
               <div className="icon-logo "></div>
             </Link>
             <CartButton />
+            <Navigation />
           </div>
-          <Navigation />
         </header>
       </div>
     </Fragment>

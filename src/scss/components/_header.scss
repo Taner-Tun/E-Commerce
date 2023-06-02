@@ -43,6 +43,15 @@
   background: white;
   border-radius: 50%;
   transform: rotate(-8deg);
+  transition: height 1s, width 1s;
+
+  &:focus-visible {
+    color: white;
+    background: $color-accent;
+    outline: solid 3px $color-primary;
+    outline-offset: 6px;
+    box-shadow: 0 0 2px 12px white;
+  }
 }
 
 .header-button {

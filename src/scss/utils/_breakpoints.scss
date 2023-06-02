@@ -65,14 +65,15 @@ $core-breakpoints: (
 
 .header-wrapper {
   transition: max-width 1s;
+  margin-left: auto;
+  margin-right: auto;
 
   @include breakpoint("sm") {
     max-width: $header-width-sm;
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 10px;
 
     .header-logo-button {
-      $logo-height: 120px;
+      $logo-height: 100px;
 
       height: $logo-height;
       width: calc(1417 / 1086 * $logo-height + 4px);
@@ -81,8 +82,7 @@ $core-breakpoints: (
 
   @include breakpoint("md") {
     max-width: $header-width-md;
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 0;
 
     .header-logo-button {
       $logo-height: 150px;
@@ -93,8 +93,6 @@ $core-breakpoints: (
 
   @include breakpoint("lg") {
     max-width: $header-width-lg;
-    margin-left: auto;
-    margin-right: auto;
 
     .header-logo-button {
       $logo-height: 180px;
@@ -105,23 +103,32 @@ $core-breakpoints: (
 }
 
 .nav-container {
-  // transition: justify-content 1s;
+  margin-left: auto;
+  margin-right: auto;
 
   @include breakpoint("sm") {
-    justify-content: flex-end;
-    right: 0;
-    left: none;
+    display: none;
   }
 
   @include breakpoint("md") {
-    justify-content: flex-end;
+    display: inline;
     left: 0;
     right: 0;
+
+    ul {
+      justify-content: flex-end;
+    }
   }
+
   @include breakpoint("lg") {
-    justify-content: center;
+    display: inline;
+    width: 400px;
     left: 0;
     right: 0;
+
+    ul {
+      justify-content: space-between;
+    }
   }
 }
 

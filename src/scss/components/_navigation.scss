@@ -2,39 +2,37 @@
 @use "../components/header" as *;
 
 .nav-container {
-  display: flex;
   position: absolute;
-  // padding: 8px 0;
-  bottom: 14px;
-
-  // z-index: 99;
+  bottom: 0;
 
   ul {
     display: flex;
     flex-direction: row;
     color: $color-light;
     list-style: none;
-    // width: 800px;
-    justify-content: space-evenly;
+    transition: justify-content 1s;
+    gap: 20px;
   }
 
-  li > a {
-    color: $color-dark;
-    background: white;
-    border-radius: 35px;
-    padding: 4px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    outline: transparent;
-    transition: background 0.4s, outline 0.2s, box-shadow 0.2s;
+  li {
+    a {
+      color: $color-dark;
+      background: white;
+      border-radius: 35px;
+      padding: 4px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      outline: transparent;
+      transition: background 0.4s, outline 0.2s, box-shadow 0.2s;
 
-    &:focus-visible,
-    &:hover {
-      color: white;
-      background: $color-accent;
-      outline: solid 3px $color-primary;
-      outline-offset: 3px;
-      box-shadow: 0 0 1px 9px white;
+      &:focus-visible,
+      &:hover {
+        color: white;
+        background: $color-accent;
+        outline: solid 3px $color-primary;
+        outline-offset: 3px;
+        box-shadow: 0 0 1px 9px white;
+      }
     }
   }
 }
