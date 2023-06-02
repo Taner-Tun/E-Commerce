@@ -7,6 +7,9 @@ $header-width-lg: 1000px;
 $header-width-md: 600px;
 $header-width-sm: 400px;
 
+$flex-basis-md: 280px;
+$nav-translate-md: calc(calc($header-width-md - $flex-basis-md) / 2);
+
 $core-breakpoints: (
   sm: 1px,
   md: 640px,
@@ -64,7 +67,7 @@ $core-breakpoints: (
 }
 
 .header-wrapper {
-  transition: max-width 1s;
+  transition: all 0.8s ease-in-out;
   margin-left: auto;
   margin-right: auto;
 
@@ -103,30 +106,29 @@ $core-breakpoints: (
 }
 
 .nav-container {
-  margin-left: auto;
-  margin-right: auto;
-
   @include breakpoint("sm") {
     display: none;
   }
 
+  //280 300
   @include breakpoint("md") {
-    display: inline;
-    left: 0;
-    right: 0;
+    display: flex;
+    justify-content: center;
+    transform: translateX($nav-translate-md);
 
     ul {
-      justify-content: flex-end;
+      flex-basis: $flex-basis-md;
+      justify-content: space-between;
     }
   }
 
   @include breakpoint("lg") {
-    display: inline;
-    width: 400px;
-    left: 0;
-    right: 0;
+    display: flex;
+    // justify-content: center;
+    transform: translateX(0);
 
     ul {
+      flex-basis: 400px;
       justify-content: space-between;
     }
   }
