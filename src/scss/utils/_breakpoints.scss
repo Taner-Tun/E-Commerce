@@ -76,7 +76,7 @@ $core-breakpoints: (
     padding-left: 10px;
 
     .header-logo-button {
-      $logo-height: 100px;
+      $logo-height: 80px;
 
       height: $logo-height;
       width: calc(1417 / 1086 * $logo-height + 4px);
@@ -88,7 +88,7 @@ $core-breakpoints: (
     padding-left: 0;
 
     .header-logo-button {
-      $logo-height: 150px;
+      $logo-height: 130px;
       height: $logo-height;
       width: calc(1417 / 1086 * $logo-height + 4px);
     }

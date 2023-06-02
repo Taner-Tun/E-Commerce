@@ -94,6 +94,9 @@ function Products() {
     <Fragment>
       <div className="main-container">
         <FilterProductMenu handleFilter={handleFilter} />
+        <br />
+        <hr />
+        <br />
         <h1 className="Cart">Products Page</h1>
         <div className="search">
           <input type="text" placeholder="Search products" value={searchText} onChange={(e) => setSearchText(e.target.value)} />

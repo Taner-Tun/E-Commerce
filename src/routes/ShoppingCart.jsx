@@ -96,6 +96,9 @@ function ShoppingCart() {
     <>
       <div className="main-container">
         <div className="test">
+          <br />
+          <hr />
+          <br />
           <h1 className="Cart">
             Shopping Cart <span>{itemCount}</span>
           </h1>
