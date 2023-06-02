@@ -8,6 +8,11 @@
   border-radius: 20px;
   background: $color-light;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+  &[data-visible="true"] {
+    transform: translate(-50%, -100%);
+  }
 
   ul {
     display: flex;
@@ -44,4 +49,15 @@
       }
     }
   }
+}
+
+.hamburger-toggle {
+  position: absolute;
+  background: lime;
+  width: 3rem;
+  aspect-ratio: 1;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  z-index: 999;
 }

@@ -229,7 +229,8 @@ $core-breakpoints: (
   }
 }
 
-.hamburger-wrapper {
+.hamburger-wrapper,
+.hamburger-toggle {
   @include breakpoint(sm) {
     display: block;
   }
