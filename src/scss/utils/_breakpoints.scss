@@ -7,7 +7,9 @@ $header-width-lg: 1000px;
 $header-width-md: 600px;
 $header-width-sm: 400px;
 
+$flex-basis-sm: 265px;
 $flex-basis-md: 280px;
+$nav-translate-sm: calc(calc($header-width-sm - $flex-basis-sm) / 2);
 $nav-translate-md: calc(calc($header-width-md - $flex-basis-md) / 2);
 
 $core-breakpoints: (
@@ -81,6 +83,24 @@ $core-breakpoints: (
       height: $logo-height;
       width: calc(1417 / 1086 * $logo-height + 4px);
     }
+
+    .cart-button {
+      display: none;
+    }
+
+    .header-button {
+      animation: fadeOut 0.4s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
   }
 
   @include breakpoint("md") {
@@ -88,9 +108,32 @@ $core-breakpoints: (
     padding-left: 0;
 
     .header-logo-button {
-      $logo-height: 130px;
+      $logo-height: 100px;
       height: $logo-height;
       width: calc(1417 / 1086 * $logo-height + 4px);
+    }
+
+    .cart-button {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(0, 0);
+      transition: all 0.4s ease-in-out;
+    }
+
+    .header-button {
+      display: flex;
+      animation: fadeIn 0.8s;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
   }
 
@@ -98,9 +141,17 @@ $core-breakpoints: (
     max-width: $header-width-lg;
 
     .header-logo-button {
-      $logo-height: 180px;
+      $logo-height: 120px;
       height: $logo-height;
       width: calc(1417 / 1086 * $logo-height + 4px);
+    }
+
+    .cart-button {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
     }
   }
 }
@@ -108,13 +159,42 @@ $core-breakpoints: (
 .nav-container {
   @include breakpoint("sm") {
     display: none;
+    justify-content: center;
+    transform: translateX($nav-translate-sm);
+    animation: fadeOut 0.8s;
+    animation-fill-mode: forwards;
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    ul {
+      flex-basis: $flex-basis-sm;
+      justify-content: space-between;
+    }
   }
 
-  //280 300
   @include breakpoint("md") {
     display: flex;
     justify-content: center;
     transform: translateX($nav-translate-md);
+
+    animation: fadeIn 0.8s;
+    animation-fill-mode: forwards;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
 
     ul {
       flex-basis: $flex-basis-md;
@@ -124,7 +204,6 @@ $core-breakpoints: (
 
   @include breakpoint("lg") {
     display: flex;
-    // justify-content: center;
     transform: translateX(0);
 
     ul {
@@ -147,5 +226,14 @@ $core-breakpoints: (
   }
   @include breakpoint(xl) {
     background-position-y: 70%;
+  }
+}
+
+.hamburger-wrapper {
+  @include breakpoint(sm) {
+    display: block;
+  }
+  @include breakpoint(md) {
+    display: none;
   }
 }

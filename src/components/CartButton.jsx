@@ -19,13 +19,15 @@ const CartButton = () => {
   }, 500)
 
   return (
-    <Link to="/shoppingcart" tabIndex="-1">
+    <Link to="/shoppingcart" className="cart-button" tabIndex="-1">
       <button className="header-button" tabIndex={5} aria-label="shopping cart" title="Shopping Cart">
-        <span className="ui-svg">
+        <span aria-hidden="true" className="ui-svg">
           <svg className="icon-cart"></svg>
         </span>
         <span>Your Cart</span>
-        <span className="header-button-badge">{itemCount}</span>
+        <span aria-hidden="true" className="header-button-badge">
+          {itemCount}
+        </span>
       </button>
     </Link>
   )

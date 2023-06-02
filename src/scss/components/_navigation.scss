@@ -3,9 +3,9 @@
 
 .nav-container {
   position: absolute;
-  bottom: 0;
+  bottom: 6px;
   width: 100%;
-  transition: all 1s ease-in-out;
+  transition: transform 0.8s ease-in-out;
 
   ul {
     display: flex;

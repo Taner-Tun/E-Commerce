@@ -3,21 +3,21 @@ import {Link} from "react-router-dom"
 import "../scss/main.scss"
 import CartButton from "./CartButton"
 import Navigation from "./Navigation"
+import Hamburger from "./Hamburger"
 
 const Header = () => {
   return (
     <Fragment>
-      <div>
-        <header className="header-container background">
-          <div className="header-wrapper">
-            <Link className="header-logo-button" to="/" alt="Jensen Deli" title="Jensen Deli" tabIndex={1} aria-label="Jensen Deli">
-              <div className="icon-logo "></div>
-            </Link>
-            <CartButton />
-            <Navigation />
-          </div>
-        </header>
-      </div>
+      <header className="header-container background">
+        <div className="header-wrapper">
+          <Link className="header-logo-button" to="/" alt="Jensen Deli" title="Jensen Deli" tabIndex={1} aria-label="Jensen Deli Logo">
+            <div className="icon-logo "></div>
+          </Link>
+          <CartButton />
+          <Navigation />
+          <Hamburger />
+        </div>
+      </header>
     </Fragment>
   )
 }

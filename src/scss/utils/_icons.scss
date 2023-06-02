@@ -57,7 +57,7 @@ $icon-logo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
   top: 2px;
   left: 2px;
   height: 100%;
-  width: calc(757 / 580 * br.$logo-height);
+  width: 100%;
   background-image: $icon-logo;
   background-repeat: no-repeat;
 }
