@@ -4,14 +4,14 @@
   position: fixed;
   top: 0%;
   left: 50%;
-  transform: translate(-50%, 30%);
+  transform: translate(-50%, -100%);
   border-radius: 20px;
   background: $color-light;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition: transform 350ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
 
   &[data-visible="true"] {
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, 30%);
   }
 
   ul {
@@ -52,12 +52,44 @@
 }
 
 .hamburger-toggle {
-  position: absolute;
-  background: lime;
   width: 3rem;
   aspect-ratio: 1;
-  top: 50%;
-  right: 0;
-  transform: translate(0, -50%);
   z-index: 999;
+  cursor: pointer;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+
+  &::before {
+    content: "";
+    height: 80%;
+    width: 80%;
+    background: white;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-image: $icon-hamburger;
+    mask-repeat: no-repeat;
+    mask-image: $icon-hamburger;
+  }
+
+  &:hover {
+    background: $color-accent;
+    border-radius: 50%;
+  }
+
+  &[aria-expanded="true"] {
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      height: 100%;
+      width: 100%;
+      background: white;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-image: $icon-cross;
+      mask-repeat: no-repeat;
+      mask-image: $icon-cross;
+    }
+  }
 }

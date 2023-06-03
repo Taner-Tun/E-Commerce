@@ -232,7 +232,7 @@ $core-breakpoints: (
 .hamburger-wrapper,
 .hamburger-toggle {
   @include breakpoint(sm) {
-    display: block;
+    display: flex;
   }
   @include breakpoint(md) {
     display: none;

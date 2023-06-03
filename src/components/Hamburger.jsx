@@ -33,7 +33,7 @@ function Hamburger() {
       <button className="hamburger-toggle" aria-controls="hamburger-wrapper" aria-expanded="false" tabIndex={1}>
         <span className="sr-only">Menu</span>
       </button>
-      <nav id="hamburger-wrapper" className="hamburger-wrapper" data-visible="true">
+      <nav id="hamburger-wrapper" className="hamburger-wrapper" data-visible="false">
         <ul>
           <li>
             <Link to="/" tabIndex={2} aria-label="Products" title="Products">
