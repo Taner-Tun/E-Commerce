@@ -12,7 +12,7 @@ function Item({itemid, image, title, category, description, price, count, handle
       <div className="details">
         <h4>{title}</h4>
         <h6>{category}</h6>
-        <h3>{description}</h3>
+        <h4>{description}</h4>
         <h5>
           {totalPrice} <p>kr</p>
         </h5>
