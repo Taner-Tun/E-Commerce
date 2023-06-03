@@ -1,9 +1,13 @@
 @use "../utils/" as *;
 
 .menu-box {
-  background-color: $color-secondary;
+  background-color: $color-accent;
   padding: 20px;
   height: 250px;
+}
+
+.menu-box:hover {
+  background-color: $color-secondary;
 }
 
 .menu-box h3 {
