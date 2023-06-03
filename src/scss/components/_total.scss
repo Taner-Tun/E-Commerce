@@ -22,7 +22,7 @@
   width: 250px;
   padding: 1rem 1rem;
   margin-top: 10px;
-  background: $color-primary;
+  background: $color-accent;
   border: none;
   color: white;
   font-size: large;
@@ -31,16 +31,20 @@
   transition: 0.3s ease;
 
   &:hover {
-    background: rgba(230, 132, 12);
+    background: darken($color-accent, 20%);
   }
 }
 
 .description {
   margin-top: 10px;
-  background: $color-primary;
+  background: $color-accent;
   padding: 0.5rem 1rem;
   color: white;
   text-align: justify;
+  
+  &:hover {
+    background: darken($color-accent, 20%);
+  }
 }
 
 .cargoamount,
@@ -64,7 +68,7 @@
 
 .freeshipping {
   font-weight: bold;
-  color: green;
+  color: #777c5a;
   font-size: 1rem;
   display: none;
 }

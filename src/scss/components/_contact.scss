@@ -1,3 +1,5 @@
+@use "../utils/" as *;
+
 .contact {
   &-container {
     max-width: 400px;
@@ -26,7 +28,7 @@
   }
 
   &-form-group button {
-    background-color: #4caf50;
+    background-color: $color-accent;
     color: #fff;
     border: none;
     padding: 10px 16px;
@@ -35,7 +37,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #45a049;
+      background-color: darken($color-accent, 20%);
     }
   }
 
@@ -62,8 +64,7 @@
 
 .contactus {
   text-align: center;
-  color: #4caf50;
-
+  color: $color-accent;
   margin-top: 0;
 }
 
@@ -94,25 +95,25 @@
 .call h1 {
   font-size: 28px;
   margin-bottom: 10px;
-  color: #4caf50;
+  color: $color-accent;
 }
 
 .call h3 {
   font-size: 20px;
   margin-bottom: 5px;
-  color: #4caf50;
+  color: $color-accent ;
 }
 
 .call p {
   margin: 0;
-  color: #4caf50;
+  color: $color-accent ;
 }
 
 .call button.btn1 {
   margin-top: 15px;
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #4caf50;
+  background-color: $color-accent;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -120,5 +121,5 @@
 }
 
 .call button.btn1:hover {
-  background-color: #45a049;
+  background-color: darken($color-accent, 20%);
 }
