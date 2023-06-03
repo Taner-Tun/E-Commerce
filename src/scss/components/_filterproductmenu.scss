@@ -8,22 +8,25 @@
 
 .menu-box h3 {
   margin-bottom: 10px;
+  color:  $color-dark;
 }
 
 .menu-box ul {
   list-style-type: none;
   padding: 0;
   font-size: large;
+  color: $color-dark;
 }
 
 .menu-box li {
   margin-bottom: 5px;
   cursor: pointer;
   font-size: large;
+  color: $color-dark;
 }
 
 .menu-box li:hover {
-  color: #555555;
+  color: darken($color-accent, 20%);
   text-decoration: underline;
 }
 
@@ -63,4 +66,8 @@
 /* Style the dropdown options */
 .category-select option {
   padding: 8px;
+}
+
+.all, .wine, .cheese, .meat {
+  color: darken($color-accent, 20%);
 }

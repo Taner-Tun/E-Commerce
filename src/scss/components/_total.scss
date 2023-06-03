@@ -10,12 +10,14 @@
 
 .checkout h1 {
   font-size: 1rem;
+  color: darken($color-accent, 20%);
 }
 
 .checkout h4 {
   display: flex;
   font-size: 1.8rem;
   letter-spacing: 2px;
+  color: darken($color-accent, 20%);
 }
 
 .checkout button {
@@ -54,6 +56,7 @@
   margin-top: 10px;
   align-items: center;
   font-weight: bold;
+  color: darken($color-accent, 20%);
 }
 
 .money {
@@ -68,7 +71,7 @@
 
 .freeshipping {
   font-weight: bold;
-  color: #777c5a;
+  color: $color-accent;
   font-size: 1rem;
   display: none;
 }
@@ -84,7 +87,7 @@
 }
 
 .success-message {
-  color: $color-primary;
+  color: $color-accent;
   font-weight: bold;
   margin-top: 10px;
 }

@@ -124,3 +124,10 @@
   display: flex;
   justify-content: space-between;
 }
+
+h2{
+  color: darken($color-accent, 10%);
+}
+h1 {
+  color: darken($color-accent, 10%)
+}
