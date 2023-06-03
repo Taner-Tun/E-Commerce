@@ -47,15 +47,7 @@ function Contact() {
           </div>
         </div>
       </div>
-      <div className="contact-section">
-        <div className="call">
-          <h1>Call Us</h1>
-          <h3>Opening Hours</h3>
-          <p>Monday–friday: 9-18</p>
-          <p>Saturday–Sunday: Closed</p>
-          <button className="btn1">078 768 500</button>
-        </div>
-      </div>
+     
       <Footer />
     </>
   )
