@@ -3,6 +3,7 @@ import {Fragment, useEffect, useState} from "react"
 
 function Hamburger() {
   const [menuVisible, setMenuVisible] = useState(false)
+  const [overlayVisible, setOverlayVisible] = useState(false)
 
   useEffect(() => {
     const primaryNav = document.querySelector(".hamburger-wrapper")
@@ -34,9 +35,11 @@ function Hamburger() {
 
   function toggleMenu() {
     setMenuVisible(!menuVisible)
+    setOverlayVisible(!overlayVisible)
   }
   return (
     <Fragment>
+      {menuVisible ? <div className="overlay"></div> : null}
       <button
         className="hamburger-toggle"
         onClick={toggleMenu}
