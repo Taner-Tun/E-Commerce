@@ -13,13 +13,15 @@ function Item({itemid, image, title, category, description, price, count, handle
         <h4>{title}</h4>
         <h6>{category}</h6>
         <h4>{description}</h4>
-        <h2>{price} kr</h2>
-        <h5>
+        <h5>{price} kr /each</h5>
+        <h2>
           {totalPrice} <p>kr</p>
-        </h5>
-        <button className="delete" onClick={() => handleItemClick("delete")}>
-          Delete
-        </button>
+        </h2>
+        <div className="deleteFromCart">
+          <button className="delete" onClick={() => handleItemClick("delete")}>
+            Delete
+          </button>
+        </div>
       </div>
       <div className="quantity">
         <button className="plus" onClick={() => handleItemClick("+")}>

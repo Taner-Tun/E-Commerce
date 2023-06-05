@@ -46,15 +46,6 @@
 }
 
 .add {
-  @include breakpoint(sm) {
-  }
-
-  @include breakpoint(md) {
-  }
-
-  @include breakpoint(lg) {
-  }
-
   padding: 14px 20px;
   background-color: $color-accent;
   color: white;
@@ -80,17 +71,23 @@
   color: $color-dark;
 
   h2 {
+    display: flex;
+    flex-direction: row;
     font-family: Prata, Open-Sans;
-    padding: 12px 0 0;
+    padding: 8px 0 0;
     line-height: 1.4;
   }
   h4 {
     padding: 12px 0 6px;
   }
 
+  h5 {
+    padding: 20px 0 0;
+  }
+
   p {
     margin-left: 5px;
-    color: $color-tone;
+    color: $color-dark;
   }
 }
 
@@ -98,6 +95,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .quantity {
@@ -105,9 +103,15 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  position: relative;
+  right: 0;
+  top: -40px;
+  margin: 0 20px;
+  transition: all 0.8s ease-in-out;
 
   button {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     width: 35px;
@@ -126,6 +130,10 @@
       color: white;
     }
   }
+
+  p {
+    line-height: 2;
+  }
 }
 
 .amount {
@@ -134,19 +142,25 @@
   font-weight: bold;
 }
 
+.deleteFromCart {
+  display: flex;
+  padding-bottom: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .delete {
-  //  position: absolute;
-  // display: block;
-  padding: 8px 16px;
-  top: 75%;
-  left: 0%;
+  padding: 14px 20px;
   background: $color-accent;
+  position: absolute;
+  right: -55px;
+  bottom: 18px;
   color: white;
-  // height: 50px;
-  // width: 20%;
   border: none;
+  font-family: Lato, Open-Sans;
+  font-size: 16px;
   margin-top: 10px;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 

@@ -1,11 +1,8 @@
 import {Link} from "react-router-dom"
 import {Fragment, useEffect, useState} from "react"
 
-
-
 function Hamburger() {
-
-  const [menuVisible, setMenuVisible] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false)
 
   useEffect(() => {
     const primaryNav = document.querySelector(".hamburger-wrapper")
@@ -32,25 +29,24 @@ function Hamburger() {
   }, [])
 
   function handleLinkClick() {
-    setMenuVisible(false);
+    setMenuVisible(false)
   }
 
   function toggleMenu() {
-    setMenuVisible(!menuVisible);
+    setMenuVisible(!menuVisible)
   }
   return (
     <Fragment>
-      <button 
-      className="hamburger-toggle"
-      onClick={toggleMenu}
-      aria-controls="hamburger-wrapper"
-      aria-expanded={menuVisible ? "true" : "false"}
-      tabIndex={1}>
+      <button
+        className="hamburger-toggle"
+        onClick={toggleMenu}
+        aria-controls="hamburger-wrapper"
+        aria-expanded={menuVisible ? "true" : "false"}
+        tabIndex={1}
+      >
         <span className="sr-only">Menu</span>
       </button>
-      <nav 
-      className="hamburger-wrapper"
-      data-visible={menuVisible ? "true" : "false"}>
+      <nav className="hamburger-wrapper" data-visible={menuVisible ? "true" : "false"}>
         <ul>
           <li>
             <Link to="/" tabIndex={2} aria-label="Products" title="Products" onClick={handleLinkClick}>
