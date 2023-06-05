@@ -1,7 +1,12 @@
 import {Link} from "react-router-dom"
-import {Fragment, useEffect} from "react"
+import {Fragment, useEffect, useState} from "react"
+
+
 
 function Hamburger() {
+
+  const [menuVisible, setMenuVisible] = useState(false);
+
   useEffect(() => {
     const primaryNav = document.querySelector(".hamburger-wrapper")
     const navToggle = document.querySelector(".hamburger-toggle")
@@ -16,9 +21,6 @@ function Hamburger() {
         primaryNav.setAttribute("data-visible", false)
         navToggle.setAttribute("aria-expanded", false)
       }
-
-      //Check to see whether toggle works or not
-      // console.log(visibility)
     }
 
     navToggle.addEventListener("click", toggleNavVisibility)
@@ -28,25 +30,40 @@ function Hamburger() {
       navToggle.removeEventListener("click", toggleNavVisibility)
     }
   }, [])
+
+  function handleLinkClick() {
+    setMenuVisible(false);
+  }
+
+  function toggleMenu() {
+    setMenuVisible(!menuVisible);
+  }
   return (
     <Fragment>
-      <button className="hamburger-toggle" aria-controls="hamburger-wrapper" aria-expanded="false" tabIndex={1}>
+      <button 
+      className="hamburger-toggle"
+      onClick={toggleMenu}
+      aria-controls="hamburger-wrapper"
+      aria-expanded={menuVisible ? "true" : "false"}
+      tabIndex={1}>
         <span className="sr-only">Menu</span>
       </button>
-      <nav id="hamburger-wrapper" className="hamburger-wrapper" data-visible="false">
+      <nav 
+      className="hamburger-wrapper"
+      data-visible={menuVisible ? "true" : "false"}>
         <ul>
           <li>
-            <Link to="/" tabIndex={2} aria-label="Products" title="Products">
+            <Link to="/" tabIndex={2} aria-label="Products" title="Products" onClick={handleLinkClick}>
               Products
             </Link>
           </li>
           <li>
-            <Link to="/shoppingcart" tabIndex={3} aria-label="Shopping Cart" title="Shopping Cart">
+            <Link to="/shoppingcart" tabIndex={3} aria-label="Shopping Cart" title="Shopping Cart" onClick={handleLinkClick}>
               Shopping Cart
             </Link>
           </li>
           <li>
-            <Link to="/contact" tabIndex={4} aria-label="Contact Us" title="Contact Us">
+            <Link to="/contact" tabIndex={4} aria-label="Contact Us" title="Contact Us" onClick={handleLinkClick}>
               Contact Us
             </Link>
           </li>
