@@ -13,10 +13,10 @@ function Item({itemid, image, title, category, description, price, count, handle
         <h4>{title}</h4>
         <h6>{category}</h6>
         <h4>{description}</h4>
+        <h2>{price} kr</h2>
         <h5>
           {totalPrice} <p>kr</p>
         </h5>
-        <h2>{price} kr</h2>
         <button className="delete" onClick={() => handleItemClick("delete")}>
           Delete
         </button>

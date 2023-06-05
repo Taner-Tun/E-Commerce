@@ -1,52 +1,74 @@
 @use "../utils/" as *;
 
 .checkout {
-  position: sticky;
-  top: 30px;
-  width: 300px;
-  height: 70vh;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.checkout h1 {
-  font-size: 1rem;
-  color: darken($color-accent, 20%);
-}
-
-.checkout h4 {
   display: flex;
-  font-size: 1.8rem;
-  letter-spacing: 2px;
-  color: darken($color-accent, 20%);
-}
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  padding: 9px 20px;
 
-.checkout button {
-  width: 250px;
-  padding: 1rem 1rem;
-  margin-top: 10px;
-  background: $color-accent;
-  border: none;
-  color: white;
-  font-size: large;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s ease;
+  span {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-  &:hover {
-    background: darken($color-accent, 20%);
+    &:nth-last-child(1) {
+      justify-content: center;
+    }
+  }
+
+  @include breakpoint(sm) {
+    height: auto;
+  }
+
+  @include breakpoint(md) {
+    height: auto;
+  }
+
+  @include breakpoint(lg) {
+    height: 310px;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 1rem;
+    color: $color-dark;
+  }
+
+  h4 {
+    display: flex;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: $color-dark;
+  }
+
+  button {
+    width: 250px;
+    padding: 1rem 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: $color-accent;
+    border: none;
+    color: white;
+    font-size: large;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      background: darken($color-accent, 20%);
+    }
   }
 }
 
 .description {
-  margin-top: 10px;
-  background: $color-accent;
+  margin: 20px 0 40px;
+  border: 1px dotted $color-accent;
+  border-radius: 10px;
   padding: 0.5rem 1rem;
-  color: white;
+  color: $color-dark;
   text-align: justify;
-  
-  &:hover {
-    background: darken($color-accent, 20%);
-  }
 }
 
 .cargoamount,
@@ -56,12 +78,13 @@
   margin-top: 10px;
   align-items: center;
   font-weight: bold;
-  color: darken($color-accent, 20%);
+  color: $color-dark;
 }
 
 .money {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 
   p {
     font-size: 1.7rem;

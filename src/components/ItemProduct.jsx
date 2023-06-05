@@ -19,13 +19,15 @@ function ItemProduct({itemid, image, title, category, description, price, count,
     <div className="CartItem" id={itemid}>
       <img src={imageLocation} alt={title} />
       <div className="details">
-        <h4>{title}</h4>
-        <h6>{category}</h6>
+        <h2>{title}</h2>
+        <h5>{category}</h5>
         <h4>{description}</h4>
         <h2>{price} kr</h2>
-        <button className="add" onClick={() => handleItemClick("add")}>
-          Add to Cart
-        </button>
+        <div className="addToCart">
+          <button className="add" onClick={() => handleItemClick("add")}>
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   )

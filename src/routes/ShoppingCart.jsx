@@ -100,7 +100,7 @@ function ShoppingCart() {
           <hr />
           <br />
           <h1 className="Cart">
-            Shopping Cart <span>{itemCount}</span>
+            Shopping Cart:<span>{itemCount}</span>
           </h1>
         </div>
         <div className="cart-main">
