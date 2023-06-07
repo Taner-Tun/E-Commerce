@@ -105,7 +105,7 @@ app.put("/data/:id", (req, res) => {
     } else {
       // Perform the update query
       const sql = `UPDATE jensen_deli SET image = ?, title = ?, category = ?, description = ?, price = ? WHERE itemid = ?`
-      const values = [itemid, image, title, category, description, price]
+      const values = [image, title, category, description, price, itemid]
 
       connection.query(sql, values, (error, results) => {
         connection.release()
