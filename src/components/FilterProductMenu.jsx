@@ -19,10 +19,18 @@ const FilterProductMenu = ({handleFilter}) => {
         <li>
           <label htmlFor="category">Category:</label>
           <select id="category" value={selectedCategory} onChange={handleCategoryChange} className="category-select">
-            <option className="all" value="">All</option>
-            <option className="wine"  value="Wine">Wine</option>
-            <option className="meat" value="Meat">Meat</option>
-            <option className="cheese" value="Cheese">Cheese</option>
+            <option className="all" value="">
+              All
+            </option>
+            <option className="wine" value="Wine">
+              Wine
+            </option>
+            <option className="meat" value="Meat">
+              Meat
+            </option>
+            <option className="cheese" value="Cheese">
+              Cheese
+            </option>
           </select>
         </li>
       </ul>
